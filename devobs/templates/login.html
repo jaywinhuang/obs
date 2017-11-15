@@ -38,11 +38,11 @@
 
     <form action="" method="post" id="form_login">
       <div class="form-group has-feedback">
-        <input type="text" name="obs_account" class="form-control" placeholder="Account Number">
+        <input type="text" name="username" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="obs_password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -105,6 +105,8 @@
     });
 
   $(function () {
+
+
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
@@ -123,16 +125,17 @@
           },
           submitHandler: function (f) {
               $(f).ajaxSubmit({
-                  url: "/login-ajax",
-
+                  url: "/api/user/login",
+                  dataType: "json",
                   beforeSubmit: function () {
                       $("#btn_login").button("loading");
                   },
                   success: function (r) {
-                      if (r.success){
-                          window.location.href="/index"
+                      if (r.status == 0){
+                          window.location.href="/index";
                       } else {
                           $("#btn_login").button("reset");
+                          console.log(r.msg);
                       }
                   },
                   dataType:"json"

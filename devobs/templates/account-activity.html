@@ -291,6 +291,63 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
+        <div class="col-lg-12">
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Balance</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="account-body">
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>Select Account:</label>
+                    <select id="select-account" class="form-control select2" style="width: 100%;">
+                    </select>
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="callout">
+                    <h4>Balance: </h4>
+                      <h3 id="account-balance"></h3>
+                  </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+        <div class="row">
+        <div class="col-xs-12">
+
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Transaction History</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Transaction Type</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody id="history-table">
+
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
 
     </section>
     <!-- /.content -->
@@ -392,12 +449,79 @@ desired effect
 <script src="../static/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../static/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../static/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../static/dist/js/adminlte.min.js"></script>
-
+<!-- AdminLTE for demo purposes -->
+<script src="../static/dist/js/demo.js"></script>
+<!-- SlimScroll -->
+<script src="../static/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../static/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- Accounting.js -->
+<script src="../static/js/accounting.js" type="application/javascript"></script>
+<!-- dateformat -->
+<script src="../static/js/jquery-dateFormat.js" type="application/javascript"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+<!-- page script -->
+<script>
+    var accounts = JSON.parse(sessionStorage.accounts)
+  $(function () {
+{#    $('#example1').DataTable();#}
 
+      //Initialize dropdown
+
+      $.each(accounts, function (index, value) {
+          $("#select-account").append("<option>"+value['account_num']+"</option>");
+      })
+
+
+        updateBalance();
+      updateHistory();
+
+      $("#select-account").change(function () {
+          updateHistory();
+          updateBalance();
+      });
+
+
+  });
+    function updateBalance() {
+        $.each(accounts, function (index, value) {
+          if (String(value['account_num']) == $("#select-account :selected").text()) {
+              $("#account-balance").text(accounting.formatMoney(value['balance']));
+          }
+      });
+    }
+    function updateHistory() {
+        $.ajax({
+              type: "POST",
+              url: "/api/account/transactions",
+              data: {"account_num": $("#select-account :selected").text()},
+              dataType: "json",
+              success: function (d) {
+                  $("#history-table").html('');
+                $.each(d.data, function (index, value) {
+                    updateTransactionHistory(JSON.stringify(value));
+                });
+                $('#example1').DataTable();
+              }
+          });
+    }
+    function updateTransactionHistory(data) {
+        d = JSON.parse(data);
+        thtml = "<tr>\n" +
+            "                  <td>"+$.format.date(d['dateTime'], "dd/MM/yyyy")+"</td>\n" +
+            "                  <td>"+d['type']+"</td>\n" +
+            "                  <td>"+d['desc']+"</td>\n" +
+            "                  <td>"+d['amount']+"</td>\n" +
+            "                </tr>";
+        $("#history-table").append(thtml);
+  }
+</script>
 </body>
 </html>

@@ -292,6 +292,52 @@ desired effect
         | Your Page Content Here |
         -------------------------->
 
+
+        <div class="col-lg-12">
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Accounts</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="account-body">
+              <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>$1,000,000.00</h3>
+                      <p>Checking *****44728</p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="account-activity.html" class="small-box-footer">Account Activity <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+        <div class="col-lg-12">
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Functions</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                    <div class="col-lg-3 col-xs-6">
+                        <button type="button" class="btn btn-block btn-primary btn-lg">Account Activity</button>
+                        <button type="button" class="btn btn-block btn-primary btn-lg">Deposit</button>
+                        <button type="button" class="btn btn-block btn-primary btn-lg">Transfer Funds</button>
+                        <button type="button" class="btn btn-block btn-primary btn-lg">Pay Bills</button>
+                        <button type="button" class="btn btn-block btn-primary btn-lg">My Profile</button>
+                    </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
     </section>
     <!-- /.content -->
   </div>
@@ -394,10 +440,55 @@ desired effect
 <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../static/dist/js/adminlte.min.js"></script>
-
+<!-- Accounting.js -->
+<script src="../static/js/accounting.js" type="application/javascript"></script>
+<!-- dateformat -->
+<script src="../static/js/jquery-dateFormat.js" type="application/javascript"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+<script type="application/javascript">
+    $(
+        function () {
 
+            $.ajax({
+                type: "GET",
+                url: "/api/user/accounts",
+                dataType: "json",
+                success: function (data) {
+
+                    if (data.status == 0) {
+                        sessionStorage.accounts = JSON.stringify(data.data);
+                        $.each(data.data, function (index, value) {
+                            console.log(value['account_num'], value['balance'], value['type']);
+                            printAccount(value['account_num'], value['balance'], value['type']);
+                        })
+                    } else {
+                        alert(data.msg);
+                    }
+
+                }
+            });
+            console.log(sessionStorage.accounts[0]);
+        });
+
+    function printAccount(account_num, balance, type) {
+        account_block = "<div class=\"col-lg-3 col-xs-6\">\n" +
+            "                  <!-- small box -->\n" +
+            "                  <div class=\"small-box bg-green\">\n" +
+            "                    <div class=\"inner\">\n" +
+            "                      <h3>"+accounting.formatMoney(balance)+"</h3>\n" +
+            "                      <p>"+type+"  "+account_num+"</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"icon\">\n" +
+            "                      <i class=\"ion ion-stats-bars\"></i>\n" +
+            "                    </div>\n" +
+            "                    <a href=\"account-activity\" class=\"small-box-footer\">Account Activity <i class=\"fa fa-arrow-circle-right\"></i></a>\n" +
+            "                  </div>\n" +
+            "                </div>"
+        $("#account-body").append(account_block);
+        console.log(account_block);
+    }
+</script>
 </body>
 </html>

@@ -291,7 +291,42 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
+        <div class="col-lg-4 col-lg-offset-4">
 
+                      <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Transfer Funds</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                <label>Select a from account</label>
+                <select id="from-account" class="form-control " style="width: 100%;">
+                </select>
+                </div>
+                  <div class="form-group">
+                <label>Select a to account</label>
+                <select id="to-account" class="form-control " style="width: 100%;">
+                </select>
+                </div>
+                  <div class="form-group">
+                  <label>Enter amount</label>
+                  <input type="text" class="form-control" id="transferamount" placeholder="amount $ ">
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+
+        </div>
     </section>
     <!-- /.content -->
   </div>
