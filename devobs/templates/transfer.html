@@ -291,7 +291,7 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-        <div class="col-lg-4 col-lg-offset-4">
+        <div class="col-lg-4 col-lg-offset-4" id="transfer-funds">
 
                       <!-- general form elements -->
           <div class="box box-primary">
@@ -300,21 +300,21 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" action="/api/user/transfer" method="post" id="transfer-form">
               <div class="box-body">
                 <div class="form-group">
                 <label>Select a from account</label>
-                <select id="from-account" class="form-control " style="width: 100%;">
+                <select name="from_account" class="form-control " style="width: 100%;">
                 </select>
                 </div>
                   <div class="form-group">
                 <label>Select a to account</label>
-                <select id="to-account" class="form-control " style="width: 100%;">
+                <select name="to_account" class="form-control " style="width: 100%;">
                 </select>
                 </div>
                   <div class="form-group">
                   <label>Enter amount</label>
-                  <input type="text" class="form-control" id="transferamount" placeholder="amount $ ">
+                  <input type="text" class="form-control" name="amount" placeholder="amount $ ">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -433,6 +433,40 @@ desired effect
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+<script>
+    var accounts = JSON.parse(sessionStorage.accounts)
+    $(function () {
+        $.each(accounts, function (index, value) {
+          $("#transfer-form select[name='from_account']").append("<option>"+value['account_num']+"</option>");
+        })
+        $.each(accounts, function (index, value) {
+          $("#transfer-form select[name='to_account']").append("<option>"+value['account_num']+"</option>");
+      })
 
+       $("#transfer-form").submit(function (event) {
+           event.preventDefault();
+           var post_url = $(this).attr("action");
+           var request_method = $(this).attr("method");
+           var form_data = $(this).serialize();
+            console.log(form_data, post_url, request_method);
+
+           $.ajax({
+               url: post_url,
+               type: request_method,
+               data: form_data,
+               dataType: "json",
+               success: function (d) {
+                   if (d.status == 0) {
+                       callMsg="<div class=\"callout callout-success\">\n" +
+                           "                <h4>Transfer succeeded.</h4>\n" +
+                           "\n</div>";
+                       console.log(callMsg);
+                       $("#transfer-funds").append(callMsg);
+                   }
+               }
+           });
+       });
+    });
+</script>
 </body>
 </html>

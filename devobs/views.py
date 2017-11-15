@@ -3,6 +3,7 @@ from flask_login import login_user, login_required, current_user, logout_user
 from devobs import app, db, lm
 from .models import Users, Transaction, Account, Bill, Transfer, Deposit
 import traceback
+import time
 
 
 @app.route('/')
@@ -124,7 +125,7 @@ def get_transactions():
     return jsonify(result)
 
 @app.route('/api/user/transfer', methods=['POST'])
-def transfer():
+def transfer_funds():
     result = {
         "status": 0,
         "msg": "success",
@@ -133,15 +134,34 @@ def transfer():
     try:
         fromacnt = request.form.get('from_account')
         toacnt = request.form.get('to_account')
-        amt = request.form.get('amount')
+        amt = int(request.form.get('amount'))
+        curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
+        transf_id = ''
         # from_account = Account.query.join(Users, Users.user_id == Account.user_id)\
         #     .filter(Users.user_id == g.user.user_id).filter_by(Account.account_num == )
-        from_account = g.user.accounts.filter_by(Account.account_num == fromacnt)
-        to_account = g.user.accounts.filter_by(Account.account_num == toacnt)
+        print(g.user.accounts)
+        from_account = g.user.accounts.filter(Account.account_num == fromacnt).first()
+        to_account = g.user.accounts.filter(Account.account_num == toacnt).first()
         if from_account is not None and to_account is not None:
             if from_account.balance - amt >= 0:
                 from_account.balance -= amt
                 to_account.balance += amt
+
+                # insert transfer record
+                transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt, time=curr_time)
+                db.session.add(transf)
+                db.session.commit()
+                transf_id = transf.transfer_id
+
+                # insert transaction history record
+                transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer', time=curr_time,
+                                          remark='transfer to '+toacnt, operation_id=transf_id)
+                transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer', time=curr_time,
+                                          remark='transfer from '+fromacnt, operation_id=transf_id)
+                db.session.add(transaction_from)
+                db.session.add(transaction_to)
+                db.session.commit()
+
             else:
                 result['status'] = 2
                 result['msg'] = "Insufficient funds in from account"
