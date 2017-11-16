@@ -13,6 +13,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/account-activity')
+@login_required
 def balance():
     return render_template('account-activity.html')
 
@@ -21,6 +22,7 @@ def deposit():
     return render_template('deposit.html')
 
 @app.route('/transfer')
+@login_required
 def transfer():
     return render_template('transfer.html')
 
@@ -136,12 +138,10 @@ def transfer_funds():
         toacnt = request.form.get('to_account')
         amt = int(request.form.get('amount'))
         curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
-        transf_id = ''
-        # from_account = Account.query.join(Users, Users.user_id == Account.user_id)\
-        #     .filter(Users.user_id == g.user.user_id).filter_by(Account.account_num == )
-        print(g.user.accounts)
+
         from_account = g.user.accounts.filter(Account.account_num == fromacnt).first()
         to_account = g.user.accounts.filter(Account.account_num == toacnt).first()
+
         if from_account is not None and to_account is not None:
             if from_account.balance - amt >= 0:
                 from_account.balance -= amt
