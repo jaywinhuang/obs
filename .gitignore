@@ -1,2 +1,4 @@
 flask-env/
 *.pyc
+*.pid
+.DS_Store
