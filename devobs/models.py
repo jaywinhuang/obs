@@ -46,7 +46,7 @@ class Account(db.Model):
     __tablename__ = 'account'
     account_num = db.Column(db.BIGINT, primary_key=True, nullable=False, unique=True)
     user_id = db.Column(db.BIGINT, db.ForeignKey('user.user_id'), nullable=False)
-    balance = db.Column(db.BIGINT, nullable=False, server_default='0')
+    balance = db.Column(db.FLOAT, nullable=False)
     type = db.Column(db.String(64), nullable=False)
     created_time = db.Column(db.DateTime, nullable=False)
     # relationship columns
@@ -64,7 +64,7 @@ class Transfer(db.Model):
     transfer_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     from_account = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
     to_account = db.Column(db.BIGINT, nullable=False)
-    amount = db.Column(db.BIGINT, nullable=False)
+    amount = db.Column(db.FLOAT, nullable=False)
     time = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
@@ -75,7 +75,7 @@ class Bill(db.Model):
     __tablename__ = 'bill'
     bill_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     from_account = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
-    amount = db.Column(db.BIGINT, nullable=False)
+    amount = db.Column(db.FLOAT, nullable=False)
     time = db.Column(db.DateTime, nullable=False)
     biller_name = db.Column(db.String(64), nullable=False)
     biller_account = db.Column(db.BIGINT, nullable=False)
@@ -93,7 +93,7 @@ class Deposit(db.Model):
     __tablename__ = 'deposit'
     deposit_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     account_num = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
-    amount = db.Column(db.BIGINT, nullable=False)
+    amount = db.Column(db.FLOAT, nullable=False)
     check_num = db.Column(db.BIGINT, nullable=False)
     time = db.Column(db.DateTime, nullable=False)
     img_path = db.Column(db.String(255), nullable=False)
@@ -106,7 +106,7 @@ class Transaction(db.Model):
     __tablename__ = 'transaction'
     transaction_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     account_num = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
-    amount = db.Column(db.BIGINT, nullable=False)
+    amount = db.Column(db.FLOAT, nullable=False)
     type = db.Column(db.String(64), nullable=False)
     time= db.Column(db.DateTime, nullable=False)
     remark = db.Column(db.String(64), nullable=False)
