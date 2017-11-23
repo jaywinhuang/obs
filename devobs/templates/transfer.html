@@ -304,12 +304,12 @@ desired effect
               <div class="box-body">
                 <div class="form-group">
                 <label>Select a from account</label>
-                <select name="from_account" class="form-control " style="width: 100%;">
+                <select name="fromAccount" class="form-control " style="width: 100%;">
                 </select>
                 </div>
                   <div class="form-group">
                 <label>Select a to account</label>
-                <select name="to_account" class="form-control " style="width: 100%;">
+                <select name="toAccount" class="form-control " style="width: 100%;">
                 </select>
                 </div>
                   <div class="form-group">
@@ -437,10 +437,10 @@ desired effect
     var accounts = JSON.parse(sessionStorage.accounts)
     $(function () {
         $.each(accounts, function (index, value) {
-          $("#transfer-form select[name='from_account']").append("<option>"+value['account_num']+"</option>");
+          $("#transfer-form select[name='fromAccount']").append("<option>"+value['accountNumber']+"</option>");
         })
         $.each(accounts, function (index, value) {
-          $("#transfer-form select[name='to_account']").append("<option>"+value['account_num']+"</option>");
+          $("#transfer-form select[name='toAccount']").append("<option>"+value['accountNumber']+"</option>");
       })
 
        $("#transfer-form").submit(function (event) {

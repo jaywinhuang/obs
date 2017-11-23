@@ -58,8 +58,8 @@ def befor_reques():
 def login_auth():
     result = {
         "status": 0,
-        "msg": "success",
-        "data": {}
+        "message": "success",
+        "data": []
     }
 
     try:
@@ -70,10 +70,10 @@ def login_auth():
             login_user(user)
         else:
             result['status'] = 2
-            result['msg'] = "user name or password incorrect"
+            result['message'] = "user name or password incorrect"
     except Exception, e:
         result['status'] = 1
-        result['msg'] = "Login error"
+        result['message'] = "Login error"
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
@@ -83,14 +83,14 @@ def login_auth():
 def get_accounts():
     result = {
         "status": 0,
-        "msg": "success",
+        "message": "success",
         "data": []
     }
 
     accounts = g.user.accounts
     for acnt in accounts:
         tmp = {
-            "account_num": acnt.account_num,
+            "accountNumber": acnt.account_num,
             "type": acnt.type,
             "balance": acnt.balance
         }
@@ -98,17 +98,17 @@ def get_accounts():
 
     return jsonify(result)
 
-@app.route('/api/account/transactions', methods=['POST'])
+@app.route('/api/user/transactions', methods=['POST'])
 @login_required
 def get_transactions():
     result = {
         "status": 0,
-        "msg": "success",
+        "message": "success",
         "data": []
     }
 
     try:
-        account_num1 = request.form.get('account_num')
+        account_num1 = request.form.get('accountNumber')
         transactions = db.session.query(Transaction).filter(Transaction.account_num == account_num1)
         for trans in transactions:
             tmp = {
@@ -121,7 +121,7 @@ def get_transactions():
 
     except Exception, e:
         result['status'] = 1
-        result['msg'] = "Get transaction error"
+        result['message'] = "Get transaction error"
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
@@ -130,13 +130,13 @@ def get_transactions():
 def transfer_funds():
     result = {
         "status": 0,
-        "msg": "success",
+        "message": "success",
         "data": []
     }
     try:
-        fromacnt = request.form.get('from_account')
-        toacnt = request.form.get('to_account')
-        amt = int(request.form.get('amount'))
+        fromacnt = request.form.get('fromAccount')
+        toacnt = request.form.get('toAccount')
+        amt = float(request.form.get('amount'))
         curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
 
         from_account = g.user.accounts.filter(Account.account_num == fromacnt).first()
@@ -164,13 +164,13 @@ def transfer_funds():
 
             else:
                 result['status'] = 2
-                result['msg'] = "Insufficient funds in from account"
+                result['message'] = "Insufficient funds in from account"
         else:
             result['status'] = 3
-            result['msg'] = "Cannot find account"
+            result['message'] = "Cannot find account"
     except Exception, e:
         result['status'] = 1
-        result['msg'] = "Transfer error"
+        result['message'] = "Transfer error"
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)

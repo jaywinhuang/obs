@@ -14,6 +14,7 @@ class Users(db.Model):
     last_name = db.Column(db.String(64), nullable=True, unique=False)
     email = db.Column(db.String(64), nullable=True, unique=True)
     phone = db.Column(db.String(64), nullable=True, unique=True)
+    address = db.Column(db.String(255), nullable=True, unique=False)
     security_question = db.Column(db.String(255), nullable=True, unique=False)
     security_answer = db.Column(db.String(64), nullable=True, unique=False)
     # relationship columns
@@ -95,6 +96,7 @@ class Deposit(db.Model):
     account_num = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
     amount = db.Column(db.FLOAT, nullable=False)
     check_num = db.Column(db.BIGINT, nullable=False)
+    memo = db.Column(db.String(64), nullable=True)
     time = db.Column(db.DateTime, nullable=False)
     img_path = db.Column(db.String(255), nullable=False)
 

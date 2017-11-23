@@ -476,7 +476,7 @@ desired effect
       //Initialize dropdown
 
       $.each(accounts, function (index, value) {
-          $("#select-account").append("<option>"+value['account_num']+"</option>");
+          $("#select-account").append("<option>"+value['accountNumber']+"</option>");
       })
 
 
@@ -492,7 +492,7 @@ desired effect
   });
     function updateBalance() {
         $.each(accounts, function (index, value) {
-          if (String(value['account_num']) == $("#select-account :selected").text()) {
+          if (String(value['accountNumber']) == $("#select-account :selected").text()) {
               $("#account-balance").text(accounting.formatMoney(value['balance']));
           }
       });
@@ -500,8 +500,8 @@ desired effect
     function updateHistory() {
         $.ajax({
               type: "POST",
-              url: "/api/account/transactions",
-              data: {"account_num": $("#select-account :selected").text()},
+              url: "/api/user/transactions",
+              data: {"accountNumber": $("#select-account :selected").text()},
               dataType: "json",
               success: function (d) {
                   $("#history-table").html('');
