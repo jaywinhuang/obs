@@ -98,7 +98,8 @@ class Deposit(db.Model):
     check_num = db.Column(db.BIGINT, nullable=False)
     memo = db.Column(db.String(64), nullable=True)
     time = db.Column(db.DateTime, nullable=False)
-    img_path = db.Column(db.String(255), nullable=False)
+    img_path_front = db.Column(db.String(255), nullable=False)
+    img_path_back = db.Column(db.String(255), nullable=False)
 
     def __repr__(self):
         return '<Deposit %r>' % self.deposit_id

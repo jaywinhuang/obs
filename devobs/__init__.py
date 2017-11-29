@@ -7,18 +7,24 @@ from logging.handlers import RotatingFileHandler
 import logging
 from werkzeug.contrib.fixers import ProxyFix
 
-
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config.from_object('config')
+
 
 # Server proxy configuration for Gunicorn.
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
 # Logging
-handler = RotatingFileHandler('obs.log', maxBytes=1024*1024, backupCount=20)
-handler.setLevel(logging.INFO)
-app.logger.addHandler(handler)
+if not app.debug:
+    import logging
+    from logging.handlers import RotatingFileHandler
+    file_handler = RotatingFileHandler('logs/obs.log', 'a', 1 * 1024 * 1024, 10)
+    file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    app.logger.setLevel(logging.INFO)
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+    app.logger.info('obs startup')
 
 # Manage Logined user.
 lm = LoginManager()

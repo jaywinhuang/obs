@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="box box-primary" style="max-width: 800px">
+            <div class="box-header with-border">
+                <h3 class="box-title">Deposit a Check</h3>
+            </div>
+            <div class="box-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label>Deposit Into:</label>
+                        <select class="form-control" id="account" onclick="loadAccounts();">
+                        <option>Checking ...xxxx</option>
+                        <option>Savings ...xxxx</option>
+                        </select>
+                        <p class="help-block">Money usually available within 4 business days.
+                    </div>
+                </form>
+                <div class="form-group">
+                    <label for="checkfrontimage">Check Front:</label>
+                    <input type="file" id="checkfrontimage" accept="image/*">
+                    <p class="help-block">Please provide a picture of the front of the check.</p>
+                </div>
+                <div class="form-group">
+                    <label for="checkbackimage">Check Back:</label>
+                    <input type="file" id="checkbackimage" accept="image/*">
+                    <p class="help-block">Please provide a picture of the back of the check.</p>
+                </div>
+                <div class="form-group">
+                    <label>Check Number:</label>
+                    <input type="text" class="form-control" placeholder="Enter ..." id="checknumber">
+                </div>
+                <div class="form-group">
+                    <label>Amount:</label>
+                    <input type="text" class="form-control" placeholder="Enter ..." id="checkmoney">
+                    <p class="help-block">Remaining deposit limit: $5,000.00</p>
+                </div>
+                <div class="form-group">
+                    <label>Memo:</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                    <p class="help-block">Optional</p>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary" onclick="checkDeposit()">Deposit</button>
+                </div>
+             </div>
+        </div>
+{% endblock %}
