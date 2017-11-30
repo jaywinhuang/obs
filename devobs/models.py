@@ -110,6 +110,7 @@ class Transaction(db.Model):
     transaction_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     account_num = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
     amount = db.Column(db.FLOAT, nullable=False)
+    balance_snapshot = db.Column(db.FLOAT, nullable=False)
     type = db.Column(db.String(64), nullable=False)
     time= db.Column(db.DateTime, nullable=False)
     remark = db.Column(db.String(64), nullable=False)

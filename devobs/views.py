@@ -20,12 +20,10 @@ def balance():
     return render_template('account-activity.html')
 
 @app.route('/deposit')
+@login_required
 def deposit():
     return render_template('deposit.html')
 
-@app.route('/deposit-try')
-def deposit_try():
-    return render_template('try_deposit.html')
 
 @app.route('/transfer')
 @login_required
@@ -33,10 +31,12 @@ def transfer():
     return render_template('transfer.html')
 
 @app.route('/billpay')
+@login_required
 def billpay():
     return render_template('billpay.html')
 
 @app.route('/profile')
+@login_required
 def profile():
     return render_template('profile.html')
 

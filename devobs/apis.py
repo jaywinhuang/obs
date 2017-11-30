@@ -9,18 +9,6 @@ base_dir = os.path.abspath(os.path.dirname(__file__))
 apis = Blueprint("apis", __name__)
 
 
-##################
-# return messages
-res_msg = {
-    "success": [0, "success"],
-    "illegal_request": [1, "request validation failed, please send legal request"],
-    "sever_error": [2, "processing error"],
-    "unauthorized": [3, "unauthorized request"]
-}
-
-##################
-
-
 
 @apis.route('/')
 def apis_index():
@@ -87,7 +75,7 @@ def get_transactions():
     try:
         account_num1 = request.form.get('accountNumber')
 
-        if not utils.isOwner(account_num1):
+        if not utils.is_owner(account_num1):
             result['status'] = 3
             result['message'] = "You are not the owner of this account."
             return jsonify(result)
@@ -98,7 +86,8 @@ def get_transactions():
                 "dateTime": trans.time,
                 "type": trans.type,
                 "desc": trans.remark,
-                "amount": trans.amount
+                "amount": trans.amount,
+                "balanceSnapshot": trans.balance_snapshot
             }
             result['data'].append(tmp)
 
@@ -138,9 +127,9 @@ def transfer_funds():
 
                 # insert transaction history record
                 transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer', time=curr_time,
-                                          remark='transfer to '+toacnt, operation_id=transf_id)
+                                          remark='transfer to '+toacnt, operation_id=transf_id, balance_snapshot=from_account.balance)
                 transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer', time=curr_time,
-                                          remark='transfer from '+fromacnt, operation_id=transf_id)
+                                          remark='transfer from '+fromacnt, operation_id=transf_id, balance_snapshot=to_account.balance)
                 db.session.add(transaction_from)
                 db.session.add(transaction_to)
                 db.session.commit()
@@ -169,6 +158,7 @@ def deposit_by_check():
     try:
         # Get parameters
         to_account = request.form.get('toAccount')
+        print "to account:" + to_account
         amount = float(request.form.get('amount'))
         check_number = request.form.get('checkNumber')
         memo = request.form.get('memo')
@@ -188,19 +178,21 @@ def deposit_by_check():
             return jsonify(result)
 
         # save deposit record
-        check_image_front.save(base_dir+"/checkImage/" + check_number +"-front.jpg")
-        check_image_back.save(base_dir+"/checkImage/" + check_number +"-back.jpg")
+        check_image_front_path = base_dir+"/checkImage/" + check_number +"-front.jpg"
+        check_image_front.save(check_image_front_path)
+        check_image_back_path = base_dir+"/checkImage/" + check_number +"-back.jpg"
+        check_image_back.save(check_image_back_path)
         deposit = Deposit(account_num=to_account, amount=amount, check_num=check_number, time=curr_time,
-                          img_path_front=check_image_front, img_path_back=check_image_back)
+                          img_path_front=check_image_front_path, img_path_back=check_image_back_path)
         db.session.add(deposit)
         db.session.flush()
         # deposit to account
-        acnt = db.session.query(Account).filter(Account.account_num == to_account).firs()
+        acnt = db.session.query(Account).filter(Account.account_num == to_account).first()
         acnt.balance += amount
         # save transaction
         transaction_info = Transaction(account_num=to_account, amount=amount, type="deposit", time=curr_time,
-                                       remark="deposit by check:" + check_number + " " + memo,
-                                       operation_id=deposit.deposit_id)
+                                       remark="deposit by check: " + check_number + " " + memo,
+                                       operation_id=deposit.deposit_id, balance_snapshot=acnt.balance)
         db.session.add(transaction_info)
 
         # commit all changes
@@ -209,52 +201,10 @@ def deposit_by_check():
     except Exception, e:
         result['status'] = 1
         result['message'] = "Some thing happend, check server log."
-        print traceback.format_exc()
+        app.logger.error(traceback.format_exc())
 
     return jsonify(result)
 
-#
-# @apis.route('/user/deposit', methods=['POST'])
-# def deposit_by_check():
-#     result = {
-#         "status": 0,
-#         "message": "success",
-#         "data": []
-#     }
-#     try:
-#         to_account = request.form.get('toAccount')
-#         amount = int(request.form.get('amount'))
-#         check_number = request.form.get('checkNumber')
-#         memo = request.form.get('memo')
-#         check_image_front = request.files['checkImageFront']
-#         check_image_back = request.files['checkImageBack']
-#         curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
-#
-#         check_info = Deposit.query.filter_by(account_num=to_account, check_num=check_number, amount=amount).first()
-#         if check_info is not None:
-#             front_image_path = base_dir+"/checkImage/" + check_number +"-front.jpg"
-#             check_image_front.save(front_image_path)
-#             back_image_path =  base_dir+"/checkImage/" + check_number +"-back.jpg"
-#             check_image_back.save(back_image_path)
-#             check_info.img_path = front_image_path + ":" + back_image_path
-#             to_account_info = Account.query.filter_by(account_num=to_account).first()
-#             to_account_info.balance += amount
-#
-#             transaction_info = Transaction(account_num=to_account, amount=amount, type="deposit by check", time=curr_time,
-#                     remark="deposit by check:" + check_number, operation_id=check_info.deposit_id)
-#             db.session.add(transaction_info)
-#             db.session.commit()
-#         else:
-#             result['status'] = 2
-#             result['message'] = "Check info is not right"
-#             return jsonify(result)
-#
-#     except Exception, e:
-#         result['status'] = 1
-#         result['message'] = ""
-#         print traceback.format_exc()
-#
-#     return jsonify(result)
 
 @apis.route("/user/profile", methods=['GET', 'POST'])
 def user_profile():
@@ -263,15 +213,37 @@ def user_profile():
         "message": "success",
         "data": {}
     }
-
+    user_model = db.session.query(Users).filter(Users.user_id == g.user.get_id()).first()
     if request.method == 'GET':
-        # TODO your code
-        pass
+        result['data'] = {
+        "ssn": user_model.ssn,
+        "username": user_model.username,
+        "firstname": user_model.first_name,
+        "lastname": user_model.last_name,
+        "email": user_model.email,
+        "phone": user_model.phone,
+        "address": user_model.address,
+        "securityQuestion": user_model.security_question,
+        "securityAnswer": user_model.security_answer
+        }
+        return jsonify(result)
 
     if request.method == 'POST':
-        # TODO
-        pass
-
+        try:
+            user_model.ssn = request.form.get("ssn")
+            user_model.username = request.form.get("username")
+            user_model.first_name = request.form.get("firstname")
+            user_model.last_name = request.form.get("lastname")
+            user_model.email = request.form.get("email")
+            user_model.phone = request.form.get("phone")
+            user_model.address = request.form.get("address")
+            user_model.security_question = request.form.get("securityQuestion")
+            user_model.security_answer = request.form.get("securityAnswer")
+            db.session.commit()
+        except Exception, e:
+            result['status'] = 1
+            result['message'] = "Get profile error, check your server"
+            app.logger.error(traceback.format_exc())
     return jsonify(result)
 
 @apis.route("/user/paybill", methods=['POST'])
@@ -287,43 +259,60 @@ def pay_bill():
         biller_name = request.form.get("billerName")
         biller_account = request.form.get("billerAccount")
         biller_address = request.form.get("billerAddress")
+        biller_address2 = request.form.get("billerAddress2")
         biller_city = request.form.get("billerCity")
         biller_state = request.form.get("billerState")
         biller_zip = request.form.get("billerZip")
         biller_phone = request.form.get("billerPhone")
         curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
 
-        bill_info = Bill(from_account=from_account, amount=amount, time=curr_time,
-            biller_name=biller_name, biller_account=biller_account, biller_address=biller_address, biller_state=biller_state,
-            biller_city=biller_city, biller_zip=biller_zip, biller_phone=biller_phone)
-        # should first add bill and commit, then it can generate the bill id
-        db.session.add(bill_info)
-        db.session.commit()
-        if bill_info is not None:
-            from_account_info = Account.query.filter_by(account_num=from_account).first()
-            to_account_info = Account.query.filter_by(account_num=biller_account).first()
-            if from_account_info is not None and to_account_info is not None:
-                if from_account_info.balance > amount:
-                    from_account_info.balance -= amount
-                    to_account_info.balance += amount
-                else:
-                    result['status'] = 2
-                    result['message'] = "The account's balance is not enough"
-                    return jsonify(result)
-            else:
-                result['status'] = 3
-                result['message'] = "The account info is error"
-                return jsonify(result)
+        # Validate account
+        if not utils.has_account(from_account):
+            result['status'] = 2
+            result['message'] = "Account do not exist"
+            return jsonify(result)
 
-        transaction_info = Transaction(account_num=from_account, amount=amount, type="pay bill", time=curr_time,
-                        remark="pay bill to:"+biller_account, operation_id=bill_info.bill_id)
+        if not utils.is_owner(from_account):
+            result['status'] = 2
+            result['message'] = "You are not the owner of this account"
+            return jsonify(result)
 
-        db.session.add(transaction_info)
+
+
+        # Validate and deduct money from account
+        account_model = Account.query.filter_by(account_num=from_account).first()
+        if account_model.balance < amount:
+            result['status'] = 2
+            result['message'] = "Insufficient balance in your account."
+            return jsonify(result)
+
+        account_model.balance -= amount
+
+        # if biller account in the same bank, add it.
+        account_model_biller = Account.query.filter_by(account_num=biller_account).first()
+        if account_model_biller:
+            account_model_biller.balance += amount
+
+        # save bill record
+        bill_model = Bill(from_account=from_account, amount=amount, time=curr_time,
+                         biller_name=biller_name, biller_account=biller_account,
+                         biller_address=biller_address + " " + biller_address2,
+                         biller_state=biller_state, biller_city=biller_city,
+                         biller_zip=biller_zip, biller_phone=biller_phone)
+        db.session.add(bill_model)
+        db.session.flush()
+
+        # save transaction record
+        transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill", time=curr_time,
+                                       remark="pay bill to: " + biller_name + " " + biller_account,
+                                       operation_id=bill_model.bill_id, balance_snapshot=account_model.balance)
+
+        db.session.add(transaction_model)
         db.session.commit()
 
     except Exception, e:
         result['status'] = 1
-        result['message'] = ""
+        result['message'] = "Pay bill failed, check your server."
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
