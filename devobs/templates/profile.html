@@ -66,8 +66,20 @@
 {% block scripts %}
 <script>
         $(function () {
-            getProfile();
-            fillProfile(JSON.parse(sessionStorage.profile));
+            $.ajax({
+                type: "GET",
+                url: "/api/user/profile",
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 0) {
+                        sessionStorage.profile = JSON.stringify(data.data);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            }).done(function () {
+                fillProfile(JSON.parse(sessionStorage.profile));
+            });
 
             $("#profile-form").submit(function (event) {
                 event.preventDefault();
