@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89d1d256-5530-42e7-a6b0-20a3d7e33166" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/devobs/templates/try_deposit.html" afterPath="$PROJECT_DIR$/devobs/templates/deposit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/__init__.py" afterPath="$PROJECT_DIR$/devobs/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/apis.py" afterPath="$PROJECT_DIR$/devobs/apis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/models.py" afterPath="$PROJECT_DIR$/devobs/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/static/js/main.js" afterPath="$PROJECT_DIR$/devobs/static/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/account-activity.html" afterPath="$PROJECT_DIR$/devobs/templates/account-activity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/.idea/workspace.xml" afterPath="$PROJECT_DIR$/devobs/templates/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/base.html" afterPath="$PROJECT_DIR$/devobs/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/billpay.html" afterPath="$PROJECT_DIR$/devobs/templates/billpay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/index.html" afterPath="$PROJECT_DIR$/devobs/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/login.html" afterPath="$PROJECT_DIR$/devobs/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/profile.html" afterPath="$PROJECT_DIR$/devobs/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/transfer.html" afterPath="$PROJECT_DIR$/devobs/templates/transfer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/views.py" afterPath="$PROJECT_DIR$/devobs/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,16 +19,40 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6414791">
+    <splitter split-orientation="horizontal" split-proportion="0.5618971">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/run.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+                  <folding>
+                    <element signature="e#0#22#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/devobs/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="596">
-                  <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+                <state relative-caret-position="795">
+                  <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#73#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/devobs/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -42,28 +61,15 @@
           <file leaf-file-name="apis.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/devobs/apis.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="89" column="57" lean-forward="true" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
                   <folding>
-                    <element signature="e#0#84#0" expanded="true" />
-                    <element signature="e#614#1233#0" expanded="false" />
-                    <element signature="e#1322#1669#0" expanded="false" />
-                    <element signature="e#2789#4811#0" expanded="false" />
-                    <element signature="e#8837#11624#0" expanded="false" />
-                    <element signature="e#11709#12626#0" expanded="false" />
-                    <element signature="e#12711#14192#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="billpay.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/billpay.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="686">
-                  <caret line="159" column="13" lean-forward="true" selection-start-line="133" selection-start-column="4" selection-end-line="159" selection-end-column="13" />
-                  <folding>
-                    <element signature="n#select#0;n#div#4;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="e#657#1276#0" expanded="false" />
+                    <element signature="e#1365#1712#0" expanded="false" />
+                    <element signature="e#2832#4854#0" expanded="false" />
+                    <element signature="e#8880#11667#0" expanded="false" />
+                    <element signature="e#11752#12669#0" expanded="false" />
+                    <element signature="e#12754#14235#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -101,10 +107,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/devobs/templates/login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1353">
+                <state relative-caret-position="-1137">
                   <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
                   <folding />
                 </state>
@@ -116,16 +122,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="135">
                   <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="596">
-                  <caret line="112" column="58" lean-forward="false" selection-start-line="112" selection-start-column="58" selection-end-line="112" selection-end-column="58" />
                   <folding />
                 </state>
               </provider>
@@ -158,8 +154,8 @@
           <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/devobs/templates/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="597">
-                  <caret line="330" column="19" lean-forward="false" selection-start-line="330" selection-start-column="19" selection-end-line="330" selection-end-column="19" />
+                <state relative-caret-position="372">
+                  <caret line="250" column="57" lean-forward="true" selection-start-line="250" selection-start-column="57" selection-end-line="250" selection-end-column="57" />
                   <folding />
                 </state>
               </provider>
@@ -207,6 +203,7 @@
       <find>account_num</find>
       <find>g.user</find>
       <find>example</find>
+      <find>log</find>
     </findStrings>
     <replaceStrings>
       <replace>account-activity</replace>
@@ -221,8 +218,8 @@
       <replace>name</replace>
       <replace>&quot;</replace>
       <replace>g.user</replace>
-      <replace>user_model</replace>
       <replace>accountNumber</replace>
+      <replace>user_model</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -245,24 +242,24 @@
         <option value="$PROJECT_DIR$/obs.log" />
         <option value="$PROJECT_DIR$/devobs/static/js/accounting.js" />
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/run.py" />
-        <option value="$PROJECT_DIR$/devobs/__init__.py" />
         <option value="$PROJECT_DIR$/devobs/utils.py" />
         <option value="$PROJECT_DIR$/devobs/templates/.idea/base.html" />
         <option value="$PROJECT_DIR$/devobs/templates/try_deposit.html" />
         <option value="$PROJECT_DIR$/devobs/templates/index.html" />
         <option value="$PROJECT_DIR$/devobs/templates/transfer.html" />
         <option value="$PROJECT_DIR$/devobs/templates/deposit.html" />
-        <option value="$PROJECT_DIR$/devobs/views.py" />
         <option value="$PROJECT_DIR$/devobs/templates/billpay.html" />
         <option value="$PROJECT_DIR$/devobs/models.py" />
         <option value="$PROJECT_DIR$/devobs/static/js/main.js" />
         <option value="$PROJECT_DIR$/devobs/templates/profile.html" />
-        <option value="$PROJECT_DIR$/devobs/apis.py" />
-        <option value="$PROJECT_DIR$/devobs/templates/base.html" />
         <option value="$PROJECT_DIR$/devobs/templates/account-activity.html" />
         <option value="$PROJECT_DIR$/devobs/templates/login.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/devobs/templates/base.html" />
+        <option value="$PROJECT_DIR$/devobs/views.py" />
+        <option value="$PROJECT_DIR$/devobs/apis.py" />
+        <option value="$PROJECT_DIR$/devobs/__init__.py" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -273,8 +270,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="228" />
-    <option name="y" value="174" />
+    <option name="x" value="431" />
+    <option name="y" value="163" />
     <option name="width" value="1699" />
     <option name="height" value="928" />
   </component>
@@ -307,25 +304,6 @@
               <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
               <item name="devobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="devobs" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="devobs" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="devobs" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -401,7 +379,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="228" y="174" width="1699" height="928" extended-state="0" />
+    <frame x="431" y="163" width="1699" height="928" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -443,7 +421,7 @@
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="false" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -460,7 +438,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -521,7 +499,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="false" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -531,7 +509,7 @@
         <state relative-caret-position="195">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,32 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/devobs/templates/deposit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -738,7 +690,7 @@
         <state relative-caret-position="297">
           <caret line="50" column="52" lean-forward="true" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
           <folding>
-            <element signature="e#79#103#0#HTML" expanded="true" />
+            <element signature="e#79#103#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -748,17 +700,7 @@
         <state relative-caret-position="90">
           <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -797,30 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/apis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="89" column="57" lean-forward="true" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-            <element signature="e#614#1233#0" expanded="false" />
-            <element signature="e#1322#1669#0" expanded="false" />
-            <element signature="e#2789#4811#0" expanded="false" />
-            <element signature="e#8837#11624#0" expanded="false" />
-            <element signature="e#11709#12626#0" expanded="false" />
-            <element signature="e#12711#14192#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="330" column="19" lean-forward="false" selection-start-line="330" selection-start-column="19" selection-end-line="330" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/devobs/templates/account-activity.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -847,11 +765,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="111" column="7" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/devobs/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1353">
+        <state relative-caret-position="-1137">
           <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="250" column="57" lean-forward="true" selection-start-line="250" selection-start-column="57" selection-end-line="250" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/apis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#657#1276#0" expanded="false" />
+            <element signature="e#1365#1712#0" expanded="false" />
+            <element signature="e#2832#4854#0" expanded="false" />
+            <element signature="e#8880#11667#0" expanded="false" />
+            <element signature="e#11752#12669#0" expanded="false" />
+            <element signature="e#12754#14235#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

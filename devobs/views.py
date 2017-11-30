@@ -48,6 +48,11 @@ def login():
     else:
         return render_template('login.html')
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
 @lm.user_loader
 def load_user(id):
     return Users.query.get(int(id))
