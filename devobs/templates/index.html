@@ -38,11 +38,24 @@
 {% block scripts %}
     <script type="application/javascript">
     $(function () {
-        getAccounts();
-        $.each(JSON.parse(sessionStorage.accounts), function (index, value) {
-                        console.log(value['accountNumber'], value['balance'], value['type']);
-                        printAccount(value['accountNumber'], value['balance'], value['type']);
-                    })
+
+        $.ajax({
+                type: "GET",
+                url: "/api/user/accounts",
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 0) {
+                        sessionStorage.accounts = JSON.stringify(data.data);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            }).done(function () {
+                $.each(JSON.parse(sessionStorage.accounts), function (index, value) {
+                            console.log(value['accountNumber'], value['balance'], value['type']);
+                            printAccount(value['accountNumber'], value['balance'], value['type']);
+                        })
+                });
         });
 
     function printAccount(account_num, balance, type) {
