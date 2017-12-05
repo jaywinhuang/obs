@@ -1,0 +1,403 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+    <div class="container container-boxed">
+
+        <div class="block padding-top-20">
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="app_faq_form" action="" method="post">
+                        <div class="input-group margin-bottom-0">
+                            <div class="input-group-addon">
+                                <span class="fa fa-search"></span>
+                            </div>
+                            <input type="text" class="form-control" name="search" placeholder="Keyword"
+                                   id="app_faq_search">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-default btn-block" id="app_faq_remove">Remove Highlights</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-default btn-block" id="app_faq_open">Open All</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-default btn-block" id="app_faq_hide">Hide All</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="block">
+
+                    <div class="app-heading app-heading-small">
+                        <div class="icon icon-lg text-blue-400">
+                            <span class="icon-question-circle"></span>
+                        </div>
+                        <div class="title">
+                            <h2>General</h2>
+                            <p>Main questions about template</p>
+                        </div>
+                    </div>
+
+                    <div class="app-faq">
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Lorem ipsum dolor sit amet, consectetur?</div>
+                            <div class="app-faq-item-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac quam magna.
+                                    Suspendisse id massa lorem. Cras dui lorem, ultrices sed nisl non, posuere iaculis
+                                    mi. Nullam feugiat augue vitae finibus dictum. Nunc venenatis volutpat rutrum. Nam
+                                    porttitor imperdiet mollis. Curabitur mauris arcu, egestas vel vehicula sed,
+                                    suscipit non tellus.</p>
+                                <p>Suspendisse sapien lacus, mattis et nibh nec, interdum tincidunt orci. Morbi pretium,
+                                    erat sit amet interdum aliquam, lectus nisi condimentum leo, ut interdum erat nulla
+                                    quis tellus. Quisque pulvinar enim nulla, in suscipit lacus congue at. Suspendisse
+                                    pretium erat metus, sit amet sagittis ante ullamcorper vitae. Nunc at mattis
+                                    magna.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Nunc bibendum tempus augue et malesuada?</div>
+                            <div class="app-faq-item-content">
+                                <p>Maecenas volutpat tincidunt dictum. Nunc tempus urna sed sem tempus pretium id quis
+                                    nulla. Nullam efficitur laoreet mi sed eleifend. Curabitur rutrum ipsum id dolor
+                                    aliquam, in dignissim nunc mollis. Vivamus rutrum sem justo, a semper orci dictum
+                                    in. Cras eleifend, ex ut mollis maximus, ipsum orci facilisis magna, non pharetra
+                                    mauris sapien vel velit. Duis eu sagittis metus, sit amet gravida risus.</p>
+                                <p>Donec sed imperdiet magna. Cras egestas leo non pellentesque varius. Quisque mattis
+                                    pellentesque consequat. Maecenas convallis ex ac odio scelerisque fringilla. Donec
+                                    aliquam urna vel sem cursus, et pretium metus pretium. Morbi dolor diam, interdum
+                                    quis commodo sed, tempor nec ante. Sed elementum urna dignissim, hendrerit sapien
+                                    vitae, fringilla lectus.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Cras suscipit odio mi, vel eleifend nibh feugiat?</div>
+                            <div class="app-faq-item-content">
+                                <p>Quisque tincidunt egestas rutrum. Duis egestas magna fermentum justo consectetur
+                                    euismod id ac nunc. Nullam elementum fringilla pulvinar. Aliquam feugiat pretium
+                                    consequat. Cras consequat ipsum quis finibus ultrices. Donec eget hendrerit sapien.
+                                    Etiam laoreet rutrum erat, id malesuada nisi. Vestibulum quis leo eu nunc rutrum
+                                    hendrerit quis et enim. Nulla mi enim, efficitur in tellus a, feugiat pulvinar
+                                    ex.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Ut nec lectus urna. Sed eleifend tellus sapien?</div>
+                            <div class="app-faq-item-content">
+                                <p>Donec justo purus, efficitur quis convallis ac, suscipit ac leo. Lorem ipsum dolor
+                                    sit amet, consectetur adipiscing elit. Pellentesque enim velit, pretium eget mauris
+                                    quis, hendrerit semper odio. Sed dignissim molestie commodo. Vivamus quis nulla sit
+                                    amet est finibus congue vel ac magna. Nunc sed bibendum nunc. Sed aliquam in lorem
+                                    at euismod. Nunc neque nibh, lacinia at mauris id, mattis blandit nisl.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Quisque ut porta purus. Praesent maximus sem dolor?</div>
+                            <div class="app-faq-item-content">
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                    himenaeos. In eu congue sem. Pellentesque et augue et nulla consequat blandit.
+                                    Aliquam imperdiet lacus in dolor ullamcorper, sed accumsan est ornare. Pellentesque
+                                    commodo blandit semper. Pellentesque eget imperdiet tellus, at malesuada ex. Sed
+                                    vulputate enim ac tortor viverra, at rutrum nisl semper. Fusce sed nisi dictum dui
+                                    vestibulum lacinia quis in sem. Curabitur pulvinar interdum justo, vel tincidunt
+                                    tellus sodales sed. Etiam ac purus vitae mi tempus mattis.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="block">
+
+                    <div class="app-heading app-heading-small">
+                        <div class="icon icon-lg text-maroon-400">
+                            <span class="icon-cog"></span>
+                        </div>
+                        <div class="title">
+                            <h2>Settings</h2>
+                            <p>Questions about template options</p>
+                        </div>
+                    </div>
+
+                    <div class="app-faq">
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Ut nec lectus urna. Sed eleifend tellus sapien?</div>
+                            <div class="app-faq-item-content">
+                                <p>Donec justo purus, efficitur quis convallis ac, suscipit ac leo. Lorem ipsum dolor
+                                    sit amet, consectetur adipiscing elit. Pellentesque enim velit, pretium eget mauris
+                                    quis, hendrerit semper odio. Sed dignissim molestie commodo. Vivamus quis nulla sit
+                                    amet est finibus congue vel ac magna. Nunc sed bibendum nunc. Sed aliquam in lorem
+                                    at euismod. Nunc neque nibh, lacinia at mauris id, mattis blandit nisl.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Cras suscipit odio mi, vel eleifend nibh feugiat?</div>
+                            <div class="app-faq-item-content">
+                                <p>Quisque tincidunt egestas rutrum. Duis egestas magna fermentum justo consectetur
+                                    euismod id ac nunc. Nullam elementum fringilla pulvinar. Aliquam feugiat pretium
+                                    consequat. Cras consequat ipsum quis finibus ultrices. Donec eget hendrerit sapien.
+                                    Etiam laoreet rutrum erat, id malesuada nisi. Vestibulum quis leo eu nunc rutrum
+                                    hendrerit quis et enim. Nulla mi enim, efficitur in tellus a, feugiat pulvinar
+                                    ex.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Lorem ipsum dolor sit amet, consectetur?</div>
+                            <div class="app-faq-item-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac quam magna.
+                                    Suspendisse id massa lorem. Cras dui lorem, ultrices sed nisl non, posuere iaculis
+                                    mi. Nullam feugiat augue vitae finibus dictum. Nunc venenatis volutpat rutrum. Nam
+                                    porttitor imperdiet mollis. Curabitur mauris arcu, egestas vel vehicula sed,
+                                    suscipit non tellus.</p>
+                                <p>Suspendisse sapien lacus, mattis et nibh nec, interdum tincidunt orci. Morbi pretium,
+                                    erat sit amet interdum aliquam, lectus nisi condimentum leo, ut interdum erat nulla
+                                    quis tellus. Quisque pulvinar enim nulla, in suscipit lacus congue at. Suspendisse
+                                    pretium erat metus, sit amet sagittis ante ullamcorper vitae. Nunc at mattis
+                                    magna.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Nunc bibendum tempus augue et malesuada?</div>
+                            <div class="app-faq-item-content">
+                                <p>Maecenas volutpat tincidunt dictum. Nunc tempus urna sed sem tempus pretium id quis
+                                    nulla. Nullam efficitur laoreet mi sed eleifend. Curabitur rutrum ipsum id dolor
+                                    aliquam, in dignissim nunc mollis. Vivamus rutrum sem justo, a semper orci dictum
+                                    in. Cras eleifend, ex ut mollis maximus, ipsum orci facilisis magna, non pharetra
+                                    mauris sapien vel velit. Duis eu sagittis metus, sit amet gravida risus.</p>
+                                <p>Donec sed imperdiet magna. Cras egestas leo non pellentesque varius. Quisque mattis
+                                    pellentesque consequat. Maecenas convallis ex ac odio scelerisque fringilla. Donec
+                                    aliquam urna vel sem cursus, et pretium metus pretium. Morbi dolor diam, interdum
+                                    quis commodo sed, tempor nec ante. Sed elementum urna dignissim, hendrerit sapien
+                                    vitae, fringilla lectus.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Quisque ut porta purus. Praesent maximus sem dolor?</div>
+                            <div class="app-faq-item-content">
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                    himenaeos. In eu congue sem. Pellentesque et augue et nulla consequat blandit.
+                                    Aliquam imperdiet lacus in dolor ullamcorper, sed accumsan est ornare. Pellentesque
+                                    commodo blandit semper. Pellentesque eget imperdiet tellus, at malesuada ex. Sed
+                                    vulputate enim ac tortor viverra, at rutrum nisl semper. Fusce sed nisi dictum dui
+                                    vestibulum lacinia quis in sem. Curabitur pulvinar interdum justo, vel tincidunt
+                                    tellus sodales sed. Etiam ac purus vitae mi tempus mattis.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="block">
+
+                    <div class="app-heading app-heading-small">
+                        <div class="icon icon-lg text-orange-400">
+                            <span class="icon-warning"></span>
+                        </div>
+                        <div class="title">
+                            <h2>Payment</h2>
+                            <p>All about payments and conditions</p>
+                        </div>
+                    </div>
+
+                    <div class="app-faq">
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Pellentesque ullamcorper, mauris in varius malesuada?</div>
+                            <div class="app-faq-item-content">
+                                <p>Neque nunc consectetur dolor, quis euismod nibh libero sed urna. Ut faucibus, mauris
+                                    sit amet tempus blandit, nisi nisl malesuada elit, vel lacinia nibh ligula ut
+                                    libero. Fusce vel tortor eu leo placerat dignissim eget blandit massa. Lorem ipsum
+                                    dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>Morbi luctus sollicitudin consequat. Curabitur ut ex imperdiet, suscipit est ac,
+                                    pretium nisl. Etiam tristique libero felis, id consequat sapien fermentum id. Sed at
+                                    nibh id augue malesuada molestie eget id diam. Cras semper sit amet ligula id
+                                    pharetra. Nulla ut tortor eros. Ut tempor ipsum vitae facilisis mollis. Sed
+                                    venenatis laoreet dolor, at finibus quam auctor dictum.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Quisque ut porta purus. Praesent maximus sem dolor?</div>
+                            <div class="app-faq-item-content">
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                    himenaeos. In eu congue sem. Pellentesque et augue et nulla consequat blandit.
+                                    Aliquam imperdiet lacus in dolor ullamcorper, sed accumsan est ornare. Pellentesque
+                                    commodo blandit semper. Pellentesque eget imperdiet tellus, at malesuada ex. Sed
+                                    vulputate enim ac tortor viverra, at rutrum nisl semper. Fusce sed nisi dictum dui
+                                    vestibulum lacinia quis in sem. Curabitur pulvinar interdum justo, vel tincidunt
+                                    tellus sodales sed. Etiam ac purus vitae mi tempus mattis.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Lorem ipsum dolor sit amet, consectetur?</div>
+                            <div class="app-faq-item-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac quam magna.
+                                    Suspendisse id massa lorem. Cras dui lorem, ultrices sed nisl non, posuere iaculis
+                                    mi. Nullam feugiat augue vitae finibus dictum. Nunc venenatis volutpat rutrum. Nam
+                                    porttitor imperdiet mollis. Curabitur mauris arcu, egestas vel vehicula sed,
+                                    suscipit non tellus.</p>
+                                <p>Suspendisse sapien lacus, mattis et nibh nec, interdum tincidunt orci. Morbi pretium,
+                                    erat sit amet interdum aliquam, lectus nisi condimentum leo, ut interdum erat nulla
+                                    quis tellus. Quisque pulvinar enim nulla, in suscipit lacus congue at. Suspendisse
+                                    pretium erat metus, sit amet sagittis ante ullamcorper vitae. Nunc at mattis
+                                    magna.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Nunc bibendum tempus augue et malesuada?</div>
+                            <div class="app-faq-item-content">
+                                <p>Maecenas volutpat tincidunt dictum. Nunc tempus urna sed sem tempus pretium id quis
+                                    nulla. Nullam efficitur laoreet mi sed eleifend. Curabitur rutrum ipsum id dolor
+                                    aliquam, in dignissim nunc mollis. Vivamus rutrum sem justo, a semper orci dictum
+                                    in. Cras eleifend, ex ut mollis maximus, ipsum orci facilisis magna, non pharetra
+                                    mauris sapien vel velit. Duis eu sagittis metus, sit amet gravida risus.</p>
+                                <p>Donec sed imperdiet magna. Cras egestas leo non pellentesque varius. Quisque mattis
+                                    pellentesque consequat. Maecenas convallis ex ac odio scelerisque fringilla. Donec
+                                    aliquam urna vel sem cursus, et pretium metus pretium. Morbi dolor diam, interdum
+                                    quis commodo sed, tempor nec ante. Sed elementum urna dignissim, hendrerit sapien
+                                    vitae, fringilla lectus.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Cras suscipit odio mi, vel eleifend nibh feugiat?</div>
+                            <div class="app-faq-item-content">
+                                <p>Quisque tincidunt egestas rutrum. Duis egestas magna fermentum justo consectetur
+                                    euismod id ac nunc. Nullam elementum fringilla pulvinar. Aliquam feugiat pretium
+                                    consequat. Cras consequat ipsum quis finibus ultrices. Donec eget hendrerit sapien.
+                                    Etiam laoreet rutrum erat, id malesuada nisi. Vestibulum quis leo eu nunc rutrum
+                                    hendrerit quis et enim. Nulla mi enim, efficitur in tellus a, feugiat pulvinar
+                                    ex.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Ut nec lectus urna. Sed eleifend tellus sapien?</div>
+                            <div class="app-faq-item-content">
+                                <p>Donec justo purus, efficitur quis convallis ac, suscipit ac leo. Lorem ipsum dolor
+                                    sit amet, consectetur adipiscing elit. Pellentesque enim velit, pretium eget mauris
+                                    quis, hendrerit semper odio. Sed dignissim molestie commodo. Vivamus quis nulla sit
+                                    amet est finibus congue vel ac magna. Nunc sed bibendum nunc. Sed aliquam in lorem
+                                    at euismod. Nunc neque nibh, lacinia at mauris id, mattis blandit nisl.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="block">
+
+                    <div class="app-heading app-heading-small">
+                        <div class="icon icon-lg text-pink-400">
+                            <span class="icon-users"></span>
+                        </div>
+                        <div class="title">
+                            <h2>Account</h2>
+                            <p>Information about your account</p>
+                        </div>
+                    </div>
+
+                    <div class="app-faq">
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Quisque ut porta purus. Praesent maximus sem dolor?</div>
+                            <div class="app-faq-item-content">
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                    himenaeos. In eu congue sem. Pellentesque et augue et nulla consequat blandit.
+                                    Aliquam imperdiet lacus in dolor ullamcorper, sed accumsan est ornare. Pellentesque
+                                    commodo blandit semper. Pellentesque eget imperdiet tellus, at malesuada ex. Sed
+                                    vulputate enim ac tortor viverra, at rutrum nisl semper. Fusce sed nisi dictum dui
+                                    vestibulum lacinia quis in sem. Curabitur pulvinar interdum justo, vel tincidunt
+                                    tellus sodales sed. Etiam ac purus vitae mi tempus mattis.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Lorem ipsum dolor sit amet, consectetur?</div>
+                            <div class="app-faq-item-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac quam magna.
+                                    Suspendisse id massa lorem. Cras dui lorem, ultrices sed nisl non, posuere iaculis
+                                    mi. Nullam feugiat augue vitae finibus dictum. Nunc venenatis volutpat rutrum. Nam
+                                    porttitor imperdiet mollis. Curabitur mauris arcu, egestas vel vehicula sed,
+                                    suscipit non tellus.</p>
+                                <p>Suspendisse sapien lacus, mattis et nibh nec, interdum tincidunt orci. Morbi pretium,
+                                    erat sit amet interdum aliquam, lectus nisi condimentum leo, ut interdum erat nulla
+                                    quis tellus. Quisque pulvinar enim nulla, in suscipit lacus congue at. Suspendisse
+                                    pretium erat metus, sit amet sagittis ante ullamcorper vitae. Nunc at mattis
+                                    magna.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Nunc bibendum tempus augue et malesuada?</div>
+                            <div class="app-faq-item-content">
+                                <p>Maecenas volutpat tincidunt dictum. Nunc tempus urna sed sem tempus pretium id quis
+                                    nulla. Nullam efficitur laoreet mi sed eleifend. Curabitur rutrum ipsum id dolor
+                                    aliquam, in dignissim nunc mollis. Vivamus rutrum sem justo, a semper orci dictum
+                                    in. Cras eleifend, ex ut mollis maximus, ipsum orci facilisis magna, non pharetra
+                                    mauris sapien vel velit. Duis eu sagittis metus, sit amet gravida risus.</p>
+                                <p>Donec sed imperdiet magna. Cras egestas leo non pellentesque varius. Quisque mattis
+                                    pellentesque consequat. Maecenas convallis ex ac odio scelerisque fringilla. Donec
+                                    aliquam urna vel sem cursus, et pretium metus pretium. Morbi dolor diam, interdum
+                                    quis commodo sed, tempor nec ante. Sed elementum urna dignissim, hendrerit sapien
+                                    vitae, fringilla lectus.</p>
+                            </div>
+                        </div>
+
+                        <div class="app-faq-item">
+                            <div class="app-faq-item-title">Pellentesque ullamcorper, mauris in varius malesuada?</div>
+                            <div class="app-faq-item-content">
+                                <p>Neque nunc consectetur dolor, quis euismod nibh libero sed urna. Ut faucibus, mauris
+                                    sit amet tempus blandit, nisi nisl malesuada elit, vel lacinia nibh ligula ut
+                                    libero. Fusce vel tortor eu leo placerat dignissim eget blandit massa. Lorem ipsum
+                                    dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>Morbi luctus sollicitudin consequat. Curabitur ut ex imperdiet, suscipit est ac,
+                                    pretium nisl. Etiam tristique libero felis, id consequat sapien fermentum id. Sed at
+                                    nibh id augue malesuada molestie eget id diam. Cras semper sit amet ligula id
+                                    pharetra. Nulla ut tortor eros. Ut tempor ipsum vitae facilisis mollis. Sed
+                                    venenatis laoreet dolor, at finibus quam auctor dictum.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+    <script type="text/javascript" src="../static/js/vendor/highlight/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../static/js/app_faq.js"></script>
+{% endblock %}

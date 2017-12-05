@@ -1,0 +1,88 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+    <div class="container container-boxed">
+
+        <div class="block block-condensed">
+            <div id="google_contact" class="pull-left" style="width: 100%; height: 300px;"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="app-heading margin-top-20">
+                        <div class="title">
+                            <h2>Send us a message</h2>
+                            <p>Use form below to contact us</p>
+                        </div>
+                    </div>
+
+                    <div class="block-content block-content-inside">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>E-mail</label>
+                                    <input type="text" class="form-control" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Message</label>
+                                    <textarea class="form-control" name="message" rows="7"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-clean">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-heading margin-top-20">
+                        <div class="title">
+                            <h2>Address</h2>
+                            <p>Visit our offices in Ukraine</p>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-inside">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <address>
+                                    <strong>Main Office</strong><br>
+                                    Street Name, Suite 999<br>
+                                    Ukraine, KY 001234<br><br>
+                                    <abbr title="Phone">P:</abbr> +38 (123) 456-78-90<br>
+                                    <abbr title="Email">E:</abbr> emailaddress@email.com
+                                </address>
+
+                            </div>
+                            <div class="col-md-6">
+                                <address>
+                                    <strong>Secondary Office</strong><br>
+                                    Street Name, Suite 555<br>
+                                    Ukraine, KY 001234<br><br>
+                                    <abbr title="Phone">P:</abbr> +38 (098) 765-43-21<br>
+                                    <abbr title="Email">E:</abbr> emailaddress@email.com
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqkgJouysDZCOWSaP8wy416o817nqUryA"></script>
+{% endblock %}

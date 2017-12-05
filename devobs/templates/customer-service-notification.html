@@ -1,0 +1,215 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- CONTENT CONTAINER -->
+    <div class="container container-boxed">
+
+        <div class="block block-condensed padding-top-20">
+
+            <div class="block-content margin-bottom-20 padding-left-15">
+
+
+                <div class="pull-right">
+                    <select class="bs-select" data-style="btn-default">
+                        <option>Order: &nbsp; Newest first</option>
+                        <option>Order: &nbsp; Older first</option>
+                        <option>Order: &nbsp; Viewed first</option>
+                        <option>Order: &nbsp; Important first</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="block-divider margin-0"></div>
+            <div class="table-responsive">
+                <table class="table table-head-light table-striped">
+                    <thead>
+                    <tr>
+                        <th width="20%">author</th>
+                        <th width="50%">subject</th>
+                        <th width="15%">attachments</th>
+                        <th width="15%">date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <a  >
+                               Juan Obrien
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Aliquam in vestibulum nibh, cras eu nisi
+                            felis</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">2 files (54kb)</span></td>
+                        <td class="text-muted text-bold">15 min ago</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a  class="contact contact-bordered contact-rounded">
+                                 John Doe
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Aenean rutrum euismod libero at sodales</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">app_build.zip (14Mb)</span>
+                        </td>
+                        <td class="text-muted text-bold">32 min ago</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a class="contact contact-bordered contact-rounded">
+                                Jessy Spencer
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Re: Vivamus at commodo risus. Aenean at
+                            vestibulum sem.</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">to_print.doc (14kb)</span></td>
+                        <td class="text-muted text-bold">1 hour ago</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a class="contact contact-bordered contact-rounded">
+                                Olly Wonderf
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Re:Re:Re:Mauris massa lectus, dignissim ut
+                            convallis eu.</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">No attachments</span></td>
+                        <td class="text-muted text-bold">3 hours ago</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a class="contact contact-bordered contact-rounded">
+                                 Sebastien Mantony
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Nullam a nisl et quam commodo tempus sit amet ut
+                            mauris</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">5 files (12.5Mb)</span></td>
+                        <td class="text-muted text-bold">1 day ago</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a class="contact contact-bordered contact-rounded">
+                                 Kenny Wozzy
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="#" class="text-bold text-primary">Maecenas cursus quis justo et lobortis</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">desktop.zip (544Mb)</span></td>
+                        <td class="text-muted text-bold">Wed, 12:55</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a  class="contact contact-bordered contact-rounded">
+                                 Joe Makony
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Aliquam in vestibulum nibh, cras eu nisi
+                            felis</a>
+                        </td>
+                        <td><span
+                                class="label label-default label-bordered label-ghost">specification.docx (114kb)</span>
+                        </td>
+                        <td class="text-muted text-bold">Wed, 09:55</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a  class="contact contact-bordered contact-rounded">
+                                 Isabella Monterazy
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Suspendisse pulvinar, mauris in auctor
+                            gravida</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">3 files (31kb)</span></td>
+                        <td class="text-muted text-bold">Mon, 23:01</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a class="contact contact-bordered contact-rounded">
+                                 G.G. O'Donald
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Aliquam in vestibulum nibh, cras eu nisi
+                            felis</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">Blocked file</span></td>
+                        <td class="text-muted text-bold">Week ago</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <a  class="contact contact-bordered contact-rounded">
+                                 Jay Van Solid
+                            </a>
+                        </td>
+                        <td>
+                             <a
+                                href="#" class="text-bold text-primary">Vivamus at commodo risus. Aenean at vestibulum
+                            sem.</a>
+                        </td>
+                        <td><span class="label label-default label-bordered label-ghost">3 files (1.2Gb)</span></td>
+                        <td class="text-muted text-bold">Week ago</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="pagination pagination-rounded pull-right">
+                <li class="disabled">
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <!-- CONTENT CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}

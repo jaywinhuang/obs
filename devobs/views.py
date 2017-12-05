@@ -11,6 +11,26 @@ from config import LANGUAGES
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
+############# route new template
+
+
+@app.route("/customer-service/faq")
+@app.route('/customer-service')
+def customer_service_faq():
+    return render_template("customer-service-faq.html")
+
+@app.route('/customer-service/contactus')
+def customer_service_contactus():
+    return render_template("customer-service-contactus.html")\
+
+@app.route('/customer-service/notification')
+def customer_service_notification():
+    return render_template("customer-service-notification.html")
+
+
+#############
+
+
 
 @app.route('/')
 @app.route('/index')
