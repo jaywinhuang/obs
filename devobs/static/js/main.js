@@ -1,11 +1,6 @@
 
-// When webpage is loaded, execute.
-$(function () {
-
-});
-
-//Get accounts from server, save it to "sessionStorage.accounts"
-function getAccounts() {
+//Refresh accounts from server, save it to "sessionStorage.accounts"
+function refreshAccounts() {
     $.ajax({
                 type: "GET",
                 url: "/api/user/accounts",
@@ -28,8 +23,8 @@ function fillSelectAccounts(id) {
         })
 }
 
-// Get user profile
-function getProfile() {
+// Refresh user profile
+function refreshProfile() {
     $.ajax({
                 type: "GET",
                 url: "/api/user/profile",

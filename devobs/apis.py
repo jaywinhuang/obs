@@ -3,7 +3,6 @@ from flask_login import login_user, login_required, current_user, logout_user
 from devobs import db, app, utils
 from .models import Users, Transaction, Account, Bill, Transfer, Deposit
 import traceback, time, os
-from werkzeug.contrib.fixers import ProxyFix
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 apis = Blueprint("apis", __name__)

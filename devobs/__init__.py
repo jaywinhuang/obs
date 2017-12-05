@@ -3,6 +3,7 @@ from flask_login import LoginManager
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
+from flask_babel import Babel
 from logging.handlers import RotatingFileHandler
 import logging
 
@@ -11,7 +12,8 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config.from_object('config')
 
-
+# Internationalization
+babel = Babel(app)
 
 # Logging
 if not app.debug:
@@ -35,3 +37,4 @@ migrate = Migrate(app, db)
 
 from devobs import views, models
 db.create_all()
+

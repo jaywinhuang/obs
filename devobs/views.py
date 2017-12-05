@@ -5,8 +5,12 @@ from .models import Users, Transaction, Account, Bill, Transfer, Deposit
 import traceback
 import time
 import os
+from devobs import babel
+from config import LANGUAGES
+
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
+
 
 @app.route('/')
 @app.route('/index')
@@ -61,3 +65,8 @@ def load_user(id):
 def befor_reques():
     g.user = current_user
 
+
+# Internationalization
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(LANGUAGES.keys())

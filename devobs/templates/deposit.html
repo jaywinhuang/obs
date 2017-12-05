@@ -63,7 +63,7 @@
                 processData: false, // NEEDED, DON'T OMIT THIS
                success: function (d) {
                    if (d.status == 0) {
-                       getAccounts();
+                       refreshAccounts();
                        callMsg="<div class=\"callout callout-success\">\n" +
                            "                <h4>Deposit succeeded.</h4>\n" +
                            "\n</div>";
