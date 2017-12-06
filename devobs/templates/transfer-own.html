@@ -1,0 +1,73 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+
+    <div class="container container-boxed">
+        <div class="row">
+            <!-- TRANSFER -->
+            <div class="block block-condensed">
+                <div class="app-heading app-heading-small">
+                    <div class="title">
+                        <h2>Transfer funds between your accoutns </h2>
+                        <p>Devonshire Lending Only</p>
+                    </div>
+                </div>
+
+                <div class="block-content">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>From</label>
+                                <select class="bs-select" name="from" title="Choose your card">
+                                    <option value="1" selected="selected">$1,544 Checking Account</option>
+                                    <option value="2">$38,109 Saving Account</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Recipient</label>
+                                    <select class="bs-select" name="from" title="Choose your card">
+                                        <option value="1">$1,544 Checking Account</option>
+                                        <option value="2" selected="selected">$38,109 Saving Account</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Amout</label>
+                                <input type="text" class="form-control" name="amout" placeholder="0.00">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Date</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control bs-datetimepicker">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-link pull-left padding-left-0">Information about fee</button>
+                        <button class="btn btn-primary btn-clean pull-right">Transfer</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END TRANSFER -->
+
+
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+    <div class="container container-boxed">
+
+        <!-- NEW DEPOSITS -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="tile-basic tile-basic-icon-top">
+                    <div class="tile-icon">
+                        <span class="icon-graduation-hat"></span>
+                    </div>
+                    <div class="tile-content text-center">
+                        <h3 class="tile-title">Student Loan</h3>
+                        <p>Manage your student loan debt with Devonshire Lending – available for qualified borrowers who
+                            wish to combine their federal and/or private student loans into a single payment.</p>
+                        <a href="pages-bank-student-loan.html" class="btn btn-default">Apply</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tile-basic tile-basic-icon-top">
+                    <div class="tile-icon">
+                        <span class="icon-apartment"></span>
+                    </div>
+                    <div class="tile-content text-center">
+                        <h3 class="tile-title">Home Equity Loan</h3>
+                        <p>For those who want to borrow a specific amount, and desire the stability of a fixed rate,
+                            term, and monthly payment.Leverage your home's equity with Devonshire's Home Equity
+                            Loans.</p>
+                        <a href="pages-bank-home-loan.html" class="btn btn-default">Apply</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tile-basic tile-basic-icon-top">
+                    <div class="tile-icon">
+                        <span class="icon-car"></span>
+                    </div>
+                    <div class="tile-content text-center">
+                        <h3 class="tile-title">Auto Loan</h3>
+                        <p>Take advantage of a great rate on a Devonshire auto loan. Apply online to lower your car
+                            payment and get a better interest rate. Get the financing you need for the car you want.</p>
+                        <a href="pages-bank-auto-loan.html" class="btn btn-default">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END NEW DEPOSITS -->
+
+        <!-- LOANS -->
+        <div class="col-md-6">
+            <div class="block block-condensed">
+                <div class="app-heading app-heading-small">
+                    <div class="title">
+                        <h2>My Loan Applications</h2>
+                    </div>
+                    <div class="heading-elements">
+                        <div class="input-group margin-right-5" style="width: 200px;">
+                            <div class="input-group-addon">
+                                <span class="fa fa-search"></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-content">
+                    <table class="table table-bordered table-striped margin-bottom-10">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Submitted</th>
+                            <th>Loan Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>11/27/2017</td>
+                            <td>Student Loan</td>
+                            <td>$14,500</td>
+                            <td>Under Review</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>12/6/2017</td>
+                            <td>Auto Loan</td>
+                            <td>$550</td>
+                            <td>Received</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="block block-condensed">
+                <div class="app-heading app-heading-small">
+                    <div class="title">
+                        <h2>My Loans</h2>
+                        <p>View Current Loans</p>
+                    </div>
+                    <div class="heading-elements">
+                        <div class="input-group margin-right-5" style="width: 250px;">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <select class="form-control" id="" name=""></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-content">
+                    <table class="table table-bordered table-striped margin-bottom-10">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Payment History</th>
+                            <th>Pending Payments</th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <p>Loan Amount:<br>
+                        Rate:<br>
+                        Amount Paid:<br>
+                        Payment Remaining:<br>
+                        Next Due:
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- END DEPOSITS -->
+
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

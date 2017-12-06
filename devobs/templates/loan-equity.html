@@ -1,0 +1,218 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+
+    <div class="container container-boxed">
+        <div class="row">
+            <!-- Begin Home Loan-->
+            <div class="block">
+
+                <div class="app-heading app-heading-small">
+                    <div class="title">
+                        <h2>Home Equity Loan Application</h2>
+                        <p> When you open an account, we will ask you your name, address, date of birth and other
+                            information that will allow us to identify you. We may also ask to see your driver's license
+                            or other identifying information.</p>
+                    </div>
+                </div>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label class="col-md-5 control-label">Do you intend to apply for joint credit with a
+                                co-applicant?</label>
+                            <label><input type="radio" name="optionsRadios" id="" value="">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="optionsRadios" id="" value="">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label class="col-md-5 control-label">If yes, does the co-applicant intend to apply for
+                                joint credit and has the co-applicant given you permission to apply jointly on her or
+                                his behalf?</label>
+                            <label>
+                                <input type="radio" name="optionsRadios" id="" value="" checked="checked">Yes </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" name="optionsRadios" id="" value="">No
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Loan Amount:</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">What is the purpose of your loan?</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="" name="" required>
+                                <option>Buy Second Home</option>
+                                <option>Home Improvement</option>
+                                <option>Refinance Mortgage</option>
+                                <option>Debt Consolidation</option>
+                                <option>Business</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">First Name:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Last Name:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Applicant Gross Annual Income:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Current Employer:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Work Address:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Work Telephone:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Address 1</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Address 2</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">City</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">State</label>
+                        <div class="col-md-2">
+                            <select class="form-control" id="" name="" required>
+                                <option value="AL">AL</option>
+                                <option value="AK">AK</option>
+                                <option value="AR">AR</option>
+                                <option value="AZ">AZ</option>
+                                <option value="CA">CA</option>
+                                <option value="CO">CO</option>
+                                <option value="CT">CT</option>
+                                <option value="DC">DC</option>
+                                <option value="DE">DE</option>
+                                <option value="FL">FL</option>
+                                <option value="GA">GA</option>
+                                <option value="HI">HI</option>
+                                <option value="IA">IA</option>
+                                <option value="ID">ID</option>
+                                <option value="IL">IL</option>
+                                <option value="IN">IN</option>
+                                <option value="KS">KS</option>
+                                <option value="KY">KY</option>
+                                <option value="LA">LA</option>
+                                <option value="MA">MA</option>
+                                <option value="MD">MD</option>
+                                <option value="ME">ME</option>
+                                <option value="MI">MI</option>
+                                <option value="MN">MN</option>
+                                <option value="MO">MO</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="NC">NC</option>
+                                <option value="NE">NE</option>
+                                <option value="NH">NH</option>
+                                <option value="NJ">NJ</option>
+                                <option value="NM">NM</option>
+                                <option value="NV">NV</option>
+                                <option value="NY">NY</option>
+                                <option value="ND">ND</option>
+                                <option value="OH">OH</option>
+                                <option value="OK">OK</option>
+                                <option value="OR">OR</option>
+                                <option value="PA">PA</option>
+                                <option value="RI">RI</option>
+                                <option value="SC">SC</option>
+                                <option value="SD">SD</option>
+                                <option value="TN">TN</option>
+                                <option value="TX">TX</option>
+                                <option value="UT">UT</option>
+                                <option value="VT">VT</option>
+                                <option value="VA">VA</option>
+                                <option value="WA">WA</option>
+                                <option value="WI">WI</option>
+                                <option value="WV">WV</option>
+                                <option value="WY">WY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Zip Code</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label class="col-md-5 control-label">Is the home you are using as collateral your primary
+                                residence?</label>
+                            <label><input type="radio" name="optionsRadios" id="" value="" checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="optionsRadios" id="" value="">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label class="col-md-5 control-label">Is your mailing address the same as the collateral
+                                address?</label>
+                            <label><input type="radio" name="optionsRadios" id="" value="" checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="optionsRadios" id="" value="">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Market Value:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                        </div>
+                    </div>
+                    <p>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
+                    </p>
+                </form>
+
+            </div>
+            <!-- END Home Loan -->
+
+
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

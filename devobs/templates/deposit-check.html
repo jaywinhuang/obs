@@ -1,0 +1,80 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+
+    <div class="container container-boxed">
+        <div class="row">
+            <!-- Begin Check Deposit-->
+            <div class="block">
+
+                <div class="app-heading app-heading-small">
+                    <div class="title">
+                        <h2>Deposit a Check</h2>
+                        <p>Please enter the information as it appears on the check.</p>
+                    </div>
+                </div>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Deposit Into:</label>
+                        <div class="col-md-10">
+                            <select class="form-control" id="toAccount" name="toAccount" required></select>
+                            <span class="help-block">Money usually available within 4 business days.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Check Front:</label>
+                        <div class="col-md-10">
+                            <input type="file" id="checkImageFront" name="checkImageFront" accept="image/*" required>
+                            <span class="help-block">Please provide a picture of the front of the check.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Check Back:</label>
+                        <div class="col-md-10">
+                            <input type="file" id="checkImageBack" name="checkImageBack" accept="image/*" required>
+                            <span class="help-block">Please provide a picture of the back of the check.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Check Number:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="checkNumber"
+                                   name="checkNumber" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Amount:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="amount" name="amount"
+                                   required>
+                            <span class="help-block">Remaining deposit limit: $5,000.00</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Memo:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" placeholder="Enter ..." id="memo" name="memo">
+                            <span class="help-block">Optional</span>
+                        </div>
+                    </div>
+                    <p>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
+                    </p>
+                </form>
+
+            </div>
+            <!-- END Deposit Check -->
+
+
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

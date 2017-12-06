@@ -1,0 +1,92 @@
+{% extends "base-new.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+
+    <div class="container container-boxed">
+        <div class="row">
+            <!-- Begin Add bill-->
+            <div class="block">
+
+                <div class="app-heading app-heading-small">
+                    <div class="title">
+                        <h2>Add bills</h2>
+                        <p>Please enter the information as it appears on a bill or invoice from the company you want to
+                            pay.</p>
+                    </div>
+                </div>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Biller Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Account Number</label>
+                        <div class="col-md-10">
+                            <input type="text" class="mask_credit form-control" name="card"
+                                   placeholder="Account Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Confirm Account Number</label>
+                        <div class="col-md-10">
+                            <input type="text" class="mask_credit form-control" name="card"
+                                   placeholder="Account Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Biller Address 1</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Biller Address 2</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Biller City/State</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Biller ZIP Code</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Biller Phone Number</label>
+                        <div class="col-md-3">
+                            <input type="text" maxlength="13" class="form-control">
+                            <span class="help-block">（XXX)XXX-XXXX</span>
+                        </div>
+
+                    </div>
+                    <p>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
+                    </p>
+
+
+                </form>
+
+            </div>
+            <!-- END Add bill -->
+
+
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

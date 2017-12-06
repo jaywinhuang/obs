@@ -188,7 +188,9 @@ var app = {
                 pathArray   = path.split("/"),
                 page        = pathArray[pathArray.length - 1];
 
-            $(".app-navigation a[href='"+page+"']").addClass("active").parents(".openable").addClass("open");
+            // $(".app-navigation a[href$='"+page+"']").addClass("active").parents(".openable").addClass("open");
+            $("a[href$='"+page+"']").parents().addClass("active").parents(".openable").addClass("open");
+            // $("#"+page).parents().addClass("active").parents(".openable").addClass("open");
         }
 
         // add open handler

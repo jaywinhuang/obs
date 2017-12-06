@@ -29,7 +29,7 @@
                     <li><a href="#" class="btn btn-link btn-icon" data-navigation-horizontal-toggle="true"><span
                             class="icon-menu"></span></a></li>
                 </ul>
-                <a href="index.html" class="app-header-logo app-header-logo-light app-header-logo-condensed">Project</a>
+                <a href="index2.html" class="app-header-logo app-header-logo-light app-header-logo-condensed">Project</a>
 
                 <ul class="app-header-buttons pull-right">
                     <li><a href="#" class="btn btn-link btn-icon"><span class="icon-cog"></span></a></li>
@@ -48,45 +48,54 @@
                             <li>
                                 <a href="#"><span class="icon-home"></span> My Account</a>
                                 <ul>
-                                    <li><a href="pages-bank-main.html">Summary</a></li>
-                                    <li><a href="pages-bank-cards.html">My Cards</a></li>
-                                    <li><a href="pages-bank-activity.html"> Account Activity</a></li>
+                                    <li><a href="/account-summary">Summary</a></li>
+                                    <!--                                             <li><a href="pages-bank-cards.html">My Cards</a></li> -->
+                                    <li><a href="/account-activity"> Account Activity</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#"><span class="icon-earth"></span> Transfer Funds</a>
                                 <ul>
-                                    <li><a href="pages-bank-transfer-self.html">Between your accounts</a></li>
-                                    <li><a href="pages-bank-transfer-others.html">To other people</a></li>
+                                    <li><a href="/transfer-own">Between your accounts</a></li>
+                                    <li><a href="/transfer-other">To other people</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#"><span class="icon-store"></span> Pay Bills</a>
                                 <ul>
-                                    <li><a href="pages-bank-transfer-bill.html">Add Bills</a></li>
-                                    <li><a href="#">Payment Activity</a></li>
+                                    <li><a href="/paybill-add">Add Bills</a></li>
+                                    <li><a href="/paybill-manage">Manage Bills</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="pages-bank-deposits.html"><span class="icon-license"></span> Deposit</a>
+                                <a href="pages-bank-deposit-check.html"><span class="icon-license"></span> Deposit</a>
+                                <ul>
+                                    <li><a href="/deposit-check">Deposit</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="#"><span class="icon-briefcase"></span> Loan</a>
+                                <ul>
+                                    <li><a href="/loan-summary">Summary</a></li>
+                                    <li><a href="/loan-student">Student Loan</a></li>
+                                    <li><a href="/loan-equity">Home Equity Loan</a></li>
+                                    <li><a href="/loan-auto">Auto Loan</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="/customer-service"><span class="icon-users"></span> Customer Service</a>
                                 <ul>
-                                    <li><a href="/customer-service/faq">FAQ</a></li>
-                                    <li><a href="/customer-service/contactus">Contact Us</a></li>
-                                    <li><a href="/customer-service/chat">Notifications</a></li>
+                                    <li><a href="/customer-service-faq">FAQ</a></li>
+                                    <li><a href="/customer-service-contactus">Contact Us</a></li>
+                                    <li><a href="/customer-service-notification">Notifications</a></li>
 
                                 </ul>
                             </li>
                             <li>
                                 <a href="#"><span class="icon-cog"></span> Settings</a>
                                 <ul>
-                                    <li><a href="pages-bank-settings.html">Account</a></li>
-                                    <li><a href="pages-bank-security.html">Security</a></li>
+                                    <li><a href="/setting-account">Account</a></li>
+                                    <li><a href="/setting-security">Security</a></li>
                                 </ul>
                             </li>
 
@@ -94,6 +103,7 @@
                     </nav>
                 </div>
             </div>
+
 
             <!-- START PAGE CONTAINER -->
             {% block content %} {% endblock %}
@@ -110,7 +120,8 @@
 
         <div class="container container-boxed">
             <div class="app-footer-line">
-                <div class="copyright">&copy; 2016 Boooya. All right reserved in the Ukraine and other countries.</div>
+                <div class="copyright">&copy; 2016 Boooya. All right reserved in the Ukraine and other countries.
+                </div>
                 <div class="pull-right">
                     <ul class="list-inline">
                         <li><a href="#">About</a></li>
@@ -138,7 +149,8 @@
 <!-- END IMPORTANT SCRIPTS -->
 <!-- THIS PAGE SCRIPTS -->
 <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
-<script type="text/javascript" src="../static/js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript"
+        src="../static/js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
 <script type="text/javascript" src="../static/js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
 <!-- END THIS PAGE SCRIPTS -->
 <!-- APP SCRIPTS -->
@@ -155,10 +167,13 @@
 <script type="text/javascript">
     window.__be = window.__be || {};
     window.__be.id = "5a270b835b9fb80007011a0f";
-    (function() {
-        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+    (function () {
+        var be = document.createElement('script');
+        be.type = 'text/javascript';
+        be.async = true;
         be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.botengine.ai/widget/plugin.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(be, s);
     })();
 </script>
 <!-- End of BotEngine code -->
