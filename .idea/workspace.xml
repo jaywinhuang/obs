@@ -2,196 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89d1d256-5530-42e7-a6b0-20a3d7e33166" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/avatar04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/avatar2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/avatar3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/avatar5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/boxed-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/boxed-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/american-express.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/cirrus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/mastercard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/mestro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/paypal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/paypal2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/credit/visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/default-50x50.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/photo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/photo2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/photo3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/photo4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user1-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user2-160x160.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user3-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user4-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user5-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user6-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user7-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/img/user8-128x128.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/fastclick/lib/fastclick.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.slim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.slim.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.slim.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/external/sizzle/dist/sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/external/sizzle/dist/sizzle.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/external/sizzle/dist/sizzle.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/ajax/var/location.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/ajax/var/nonce.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/ajax/var/rquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/core/var/rsingleTag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/cssExpand.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/getStyles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/isHiddenWithinTree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/rmargin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/rnumnonpx.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/swap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/data/var/acceptData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/data/var/dataPriv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/data/var/dataUser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/manipulation/var/rcheckableType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/manipulation/var/rscriptType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/manipulation/var/rtagName.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/traversing/var/dir.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/traversing/var/rneedsContext.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/traversing/var/siblings.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/ObjectFunctionString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/arr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/class2type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/concat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/document.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/documentElement.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/fnToString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/getProto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/hasOwn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/indexOf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/pnum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/push.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/rcssNum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/rnothtmlwhite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/slice.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/toString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/css/select2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/css/select2.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/az.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sr-Cyrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/zh-TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.full.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.full.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/AdminLTE.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/AdminLTE.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/adminlte.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/adminlte.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-bootstrap-social.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-bootstrap-social.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-fullcalendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-fullcalendar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-select2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-select2.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-without-plugins.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-without-plugins.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/_all-skins.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/_all-skins.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black-light.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-blue-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-blue.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green-light.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple-light.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red-light.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow-light.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/adminlte.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/adminlte.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/app.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/demo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/pages/dashboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/dist/js/pages/dashboard2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/base-new.html" afterPath="$PROJECT_DIR$/devobs/templates/base-new.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/transfer-other.html" afterPath="$PROJECT_DIR$/devobs/templates/transfer-other.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/views.py" afterPath="$PROJECT_DIR$/devobs/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -201,148 +14,127 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6112412">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="paybill-manage.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/paybill-manage.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="653">
-                  <caret line="180" column="31" lean-forward="false" selection-start-line="180" selection-start-column="31" selection-end-line="180" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="loan-auto.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/loan-auto.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="loan-summary.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/loan-summary.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1671">
-                  <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#2922#2943#0#HTML" expanded="true" />
-                    <element signature="e#4896#4917#0#HTML" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-                  <folding>
-                    <element signature="e#0#73#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="customerLogin.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/customerLogin.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="623">
-                  <caret line="153" column="51" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="enroll.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/enroll.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="443">
-                  <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="adminLogin.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/adminLogin.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-697">
-                  <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-                  <folding>
-                    <element signature="n#style#0;n#a#0;n#u#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#u#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#u#0;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="e#14252#14258#0#HTML" expanded="true" />
-                    <element signature="e#14316#14322#0#HTML" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="e#21886#21893#1#HTML" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="e#24166#24173#1#HTML" expanded="true" />
-                    <element signature="e#29466#29472#0#HTML" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="style2.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/static/css/style2.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="775" column="37" lean-forward="false" selection-start-line="775" selection-start-column="37" selection-end-line="775" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="base-new.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="loan-auto.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/loan-auto.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1230">
+              <caret line="82" column="19" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base-new.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="127" column="52" lean-forward="true" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customerLogin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/customerLogin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="153" column="51" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transfer-other.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/transfer-other.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="63" column="31" lean-forward="false" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enroll.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/enroll.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="104" column="30" lean-forward="false" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminLogin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/adminLogin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-697">
+              <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#u#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#u#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#u#0;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#14252#14258#0#HTML" expanded="true" />
+                <element signature="e#14316#14322#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#21886#21893#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#24166#24173#1#HTML" expanded="true" />
+                <element signature="e#29466#29472#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style2.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devobs/static/css/style2.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="775" column="37" lean-forward="false" selection-start-line="775" selection-start-column="37" selection-end-line="775" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -444,7 +236,6 @@
         <option value="$PROJECT_DIR$/devobs/templates/deposit-check.html" />
         <option value="$PROJECT_DIR$/devobs/templates/paybill-add.html" />
         <option value="$PROJECT_DIR$/devobs/templates/transfer-own.html" />
-        <option value="$PROJECT_DIR$/devobs/templates/transfer-other.html" />
         <option value="$PROJECT_DIR$/devobs/static/js/app_demo.js" />
         <option value="$PROJECT_DIR$/devobs/static/js/app.js" />
         <option value="$PROJECT_DIR$/devobs/templates/loan-student.html" />
@@ -452,15 +243,16 @@
         <option value="$PROJECT_DIR$/devobs/templates/setting-account.html" />
         <option value="$PROJECT_DIR$/devobs/templates/setting-security.html" />
         <option value="$PROJECT_DIR$/devobs/templates/paybill-manage.html" />
-        <option value="$PROJECT_DIR$/devobs/templates/base-new.html" />
         <option value="$PROJECT_DIR$/devobs/templates/loan-summary.html" />
         <option value="$PROJECT_DIR$/devobs/templates/customerLogin.html" />
         <option value="$PROJECT_DIR$/devobs/templates/signup.html" />
         <option value="$PROJECT_DIR$/devobs/templates/adminLogin.html" />
-        <option value="$PROJECT_DIR$/devobs/views.py" />
         <option value="$PROJECT_DIR$/devobs/static/css/style2.css" />
         <option value="$PROJECT_DIR$/devobs/templates/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/devobs/templates/transfer-other.html" />
+        <option value="$PROJECT_DIR$/devobs/views.py" />
+        <option value="$PROJECT_DIR$/devobs/templates/base-new.html" />
       </list>
     </option>
   </component>
@@ -505,6 +297,12 @@
               <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
               <item name="devobs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="devobs" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -596,6 +394,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="70" width="1717" height="1015" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -603,7 +402,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19063546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23522387" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23522387" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11038961" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1204,14 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/templates/transfer-other.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/devobs/templates/transfer-wire.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1232,14 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="653">
           <caret line="180" column="31" lean-forward="false" selection-start-line="180" selection-start-column="31" selection-end-line="180" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/templates/loan-auto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1271,28 +1054,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/devobs/templates/customerLogin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="623">
           <caret line="153" column="51" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1334,6 +1099,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/templates/transfer-other.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="63" column="31" lean-forward="false" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/templates/loan-auto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="19" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="127" column="52" lean-forward="true" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
           <folding />
         </state>
       </provider>

@@ -5,85 +5,63 @@
 
     <div class="container container-boxed">
         <div class="row">
-            <!-- Begin Add bill-->
-            <div class="block">
-
+            <!-- TRANSFER -->
+            <div class="block block-condensed">
                 <div class="app-heading app-heading-small">
                     <div class="title">
-                        <h2>Add bills</h2>
-                        <p>Please enter the information as it appears on a bill or invoice from the company you want to
-                            pay.</p>
+                        <h2>Transfer Funds To Other People </h2>
+                        <p>Devonshire Lending Only</p>
                     </div>
                 </div>
 
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Biller Name</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Account Number</label>
-                        <div class="col-md-10">
-                            <input type="text" class="mask_credit form-control" name="card"
-                                   placeholder="Account Number">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Confirm Account Number</label>
-                        <div class="col-md-10">
-                            <input type="text" class="mask_credit form-control" name="card"
-                                   placeholder="Account Number">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Biller Address 1</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Biller Address 2</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Biller City/State</label>
-                        <div class="col-md-3">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Biller ZIP Code</label>
-                        <div class="col-md-3">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">Biller Phone Number</label>
-                        <div class="col-md-3">
-                            <input type="text" maxlength="13" class="form-control">
-                            <span class="help-block">（XXX)XXX-XXXX</span>
-                        </div>
+                <div class="block-content">
 
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>From</label>
+                                <select class="bs-select" name="from" title="Choose your card">
+                                    <option value="1">$1,544 Checking Account</option>
+                                    <option value="2">$38,109 Saving Account</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Recipient</label>
+                                    <input type="text" class="mask_credit form-control" name="card"
+                                           placeholder="Card Number">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        <button type="button" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
-                    </p>
 
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Amout</label>
+                                <input type="text" class="form-control" name="amout" placeholder="0.00">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Date</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control bs-datetimepicker">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                </form>
-
+                    <div>
+                        <button class="btn btn-link pull-left padding-left-0">Information about fee</button>
+                        <button class="btn btn-primary btn-clean pull-right">Transfer</button>
+                    </div>
+                </div>
             </div>
-            <!-- END Add bill -->
+            <!-- END TRANSFER -->
 
 
         </div>
     </div>
-    <!-- END PAGE CONTAINER -->f
+    <!-- END PAGE CONTAINER -->
 {% endblock %}
 
 

@@ -93,6 +93,9 @@ def loan_student():
 def loan_equity():
     return render_template('loan-equity.html')
 
+@app.route('/loan-auto')
+def loan_auto():
+    return render_template('loan-auto.html')
 
 
 @app.route('/customer-service')
