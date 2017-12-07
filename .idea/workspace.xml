@@ -2,20 +2,251 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89d1d256-5530-42e7-a6b0-20a3d7e33166" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/base.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/billpay.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/deposit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/enroll.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/profile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/templates/transfer.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/devobs/templates/account-activity.html" afterPath="$PROJECT_DIR$/devobs/templates/account-activity2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/Linearicons-Free.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/Linearicons-Free.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/Linearicons-Free.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/Linearicons-Free.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/summernote.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/summernote.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/summernote.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce-small.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce-small.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce-small.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/img/anchor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/img/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/img/object.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/img/trans.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/bars.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/Linearicons-Free.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/landing.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/style2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/style3.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/styles.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/Variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/content-style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/content.inline.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/content.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce-small.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce-small.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/fonts/tinymce.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/skin.ie7.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/skin.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/devobs/static/css/vendor/tinymce/skin.min.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/fastclick/lib/fastclick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.slim.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.slim.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/dist/jquery.slim.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/external/sizzle/dist/sizzle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/external/sizzle/dist/sizzle.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/external/sizzle/dist/sizzle.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/ajax/var/location.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/ajax/var/nonce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/ajax/var/rquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/core/var/rsingleTag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/cssExpand.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/getStyles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/isHiddenWithinTree.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/rmargin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/rnumnonpx.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/css/var/swap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/data/var/acceptData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/data/var/dataPriv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/data/var/dataUser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/manipulation/var/rcheckableType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/manipulation/var/rscriptType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/manipulation/var/rtagName.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/traversing/var/dir.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/traversing/var/rneedsContext.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/traversing/var/siblings.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/ObjectFunctionString.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/arr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/class2type.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/concat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/document.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/documentElement.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/fnToString.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/getProto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/hasOwn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/indexOf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/pnum.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/push.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/rcssNum.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/rnothtmlwhite.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/slice.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/support.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/jquery/src/var/toString.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/css/select2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/css/select2.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/az.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/eu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/gl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/is.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/km.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/mk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ms.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/pt-BR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sr-Cyrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/zh-CN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/i18n/zh-TW.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.full.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.full.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/select2/dist/js/select2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/AdminLTE.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/AdminLTE.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/adminlte.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/adminlte.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-bootstrap-social.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-bootstrap-social.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-fullcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-fullcalendar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-select2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-select2.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-without-plugins.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/alt/AdminLTE-without-plugins.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/_all-skins.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/_all-skins.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-black.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-blue-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-blue.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-green.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-purple.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-red.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow-light.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/css/skins/skin-yellow.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/avatar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/avatar04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/avatar2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/avatar3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/avatar5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/boxed-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/boxed-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/american-express.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/cirrus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/mastercard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/mestro.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/paypal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/paypal2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/credit/visa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/default-50x50.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/photo1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/photo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/photo3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/photo4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user1-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user2-160x160.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user3-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user4-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user5-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user6-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user7-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/img/user8-128x128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/adminlte.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/adminlte.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/app.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/demo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/pages/dashboard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/dist/js/pages/dashboard2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/b1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/b2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/b3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/logo1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/map-marker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/t1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/t2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/t3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/devobs/static/img/t4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/obs.log" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/devobs/static/bower_components/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/devobs/static/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/static/js/app.js" afterPath="$PROJECT_DIR$/devobs/static/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/base-new.html" afterPath="$PROJECT_DIR$/devobs/templates/base-new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/customer-service-notification.html" afterPath="$PROJECT_DIR$/devobs/templates/customer-service-notification.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/views.py" afterPath="$PROJECT_DIR$/devobs/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devobs/templates/index.html" afterPath="$PROJECT_DIR$/devobs/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,19 +256,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54473305">
+    <splitter split-orientation="horizontal" split-proportion="0.6112412">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="transfer-own.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/transfer-own.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="paybill-manage.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/devobs/templates/paybill-manage.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -62,21 +283,11 @@
             <entry file="file://$PROJECT_DIR$/devobs/templates/loan-summary.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1671">
-                  <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+                  <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
                   <folding>
                     <element signature="e#2922#2943#0#HTML" expanded="true" />
                     <element signature="e#4896#4917#0#HTML" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="transfer-wire.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/devobs/templates/transfer-wire.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -97,7 +308,7 @@
             <entry file="file://$PROJECT_DIR$/devobs/templates/customerLogin.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="623">
-                  <caret line="153" column="51" lean-forward="true" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
+                  <caret line="153" column="51" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -126,8 +337,45 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/devobs/templates/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="653">
-                  <caret line="588" column="13" lean-forward="true" selection-start-line="588" selection-start-column="13" selection-end-line="588" selection-end-column="13" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+                  <folding>
+                    <element signature="n#style#0;n#a#0;n#u#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#u#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#u#0;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#14252#14258#0#HTML" expanded="true" />
+                    <element signature="e#14316#14322#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#21886#21893#1#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#24166#24173#1#HTML" expanded="true" />
+                    <element signature="e#29466#29472#0#HTML" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style2.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/devobs/static/css/style2.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="215">
+                  <caret line="775" column="37" lean-forward="false" selection-start-line="775" selection-start-column="37" selection-end-line="775" selection-end-column="37" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -140,8 +388,8 @@
           <file leaf-file-name="base-new.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="42" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -217,7 +465,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/devobs/views_static_template.py" />
         <option value="$PROJECT_DIR$/devobs/views_ajax.py" />
         <option value="$PROJECT_DIR$/devobs/templates/enroll.html" />
@@ -231,7 +478,6 @@
         <option value="$PROJECT_DIR$/devobs/templates/billpay.html" />
         <option value="$PROJECT_DIR$/devobs/models.py" />
         <option value="$PROJECT_DIR$/devobs/templates/login.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/devobs/templates/base.html" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/devobs/templates/profile.html" />
@@ -267,6 +513,8 @@
         <option value="$PROJECT_DIR$/devobs/templates/signup.html" />
         <option value="$PROJECT_DIR$/devobs/templates/adminLogin.html" />
         <option value="$PROJECT_DIR$/devobs/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/devobs/static/css/style2.css" />
         <option value="$PROJECT_DIR$/devobs/templates/index.html" />
       </list>
     </option>
@@ -278,8 +526,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="174" />
-    <option name="y" value="87" />
+    <option name="x" value="17" />
+    <option name="y" value="70" />
     <option name="width" value="1717" />
     <option name="height" value="1015" />
   </component>
@@ -317,12 +565,6 @@
               <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
               <item name="devobs" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="obs-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obs-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="devobs" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -341,11 +583,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/devobs/static/css" />
       <recent name="$PROJECT_DIR$/devobs/templates" />
       <recent name="$PROJECT_DIR$/devobs/static/img" />
       <recent name="$PROJECT_DIR$/devobs/templates/templates-copy" />
       <recent name="$PROJECT_DIR$/devobs/static/bower_components" />
-      <recent name="$PROJECT_DIR$/app/static/bower_components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/devobs/templates" />
@@ -404,17 +646,26 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="174" y="87" width="1717" height="1015" extended-state="0" />
+    <frame x="17" y="70" width="1717" height="1015" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19084822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19063546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17253731" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23522387" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11038961" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -463,13 +714,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/devobs/static/js/accounting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6060">
-          <caret line="413" column="9" lean-forward="false" selection-start-line="413" selection-start-column="9" selection-end-line="413" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_migrate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -489,13 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" column="7" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1072,19 +1309,11 @@
     <entry file="file://$PROJECT_DIR$/devobs/templates/loan-summary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1671">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="e#2922#2943#0#HTML" expanded="true" />
             <element signature="e#4896#4917#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,16 +1346,57 @@
     <entry file="file://$PROJECT_DIR$/devobs/templates/customerLogin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="623">
-          <caret line="153" column="51" lean-forward="true" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
+          <caret line="153" column="51" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/templates/base-new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devobs/static/css/style2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="775" column="37" lean-forward="false" selection-start-line="775" selection-start-column="37" selection-end-line="775" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/devobs/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="588" column="13" lean-forward="true" selection-start-line="588" selection-start-column="13" selection-end-line="588" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="75">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#u#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#u#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#u#0;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#14252#14258#0#HTML" expanded="true" />
+            <element signature="e#14316#14322#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#21886#21893#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#24166#24173#1#HTML" expanded="true" />
+            <element signature="e#29466#29472#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
