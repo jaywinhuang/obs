@@ -1,8 +1,12 @@
-from flask import render_template, request, jsonify, redirect, g, url_for, Blueprint
-from flask_login import login_user, login_required, current_user, logout_user
+import os
+import time
+import traceback
+
+from flask import request, jsonify, g, Blueprint
+from flask_login import login_user, login_required
+
 from devobs import db, app, utils
 from .models import Users, Transaction, Account, Bill, Transfer, Deposit
-import traceback, time, os
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 apis = Blueprint("apis", __name__)
@@ -22,24 +26,60 @@ def login_auth():
     result = {
         "status": 0,
         "message": "success",
-        "data": []
+        "data": {}
     }
 
     try:
         username = request.form.get('username')
         password = request.form.get('password')
-        user = Users.query.filter_by(username=username, password=password).first()
+        user = Users.query.filter_by(username=username).first()
         if user is not None:
-            login_user(user)
+            # TODO here should add hash to password
+            if user.password == password:
+                result['data']['security_question'] = user.security_question
+                result['data']['security_answer'] = utils.md5(user.security_answer)
+                # login_user(user)
+            else:
+                result['status'] = 2
+                result['message'] = "password is not incorrect"
+                # send email
+                email_receiver = [user.email]
+                email_body = "<p>Someone has tried to login your account with a wrong password at {}. If this is not you, please contact us at 1-080-987-6541, Monday through Friday 7 am to 10pm, Saturday and Sunday 8 am to 5 pm ET. This email was sent automatically as an additional layer of security. Thank you for using Devonshire Lending. This mailbox is not monitored. Please do not reply.</p>".format(time.ctime())
+                app.logger.info("Send email to {}".format(user.email))
+                utils.send_email(email_receiver, "Wrong password when login", email_body)
         else:
-            result['status'] = 2
-            result['message'] = "user name or password incorrect"
+            result['status'] = 3
+            result['message'] = "user is not exits"
+
     except Exception, e:
         result['status'] = 1
         result['message'] = "Login error"
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
+
+
+@apis.route('/user/login_after_check', methods=['POST'])
+def login_after_check():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": {}
+    }
+
+    try:
+        username = request.form.get('username')
+        password = request.form.get('password')
+        user = Users.query.filter_by(username=username, password=password).first()
+        login_user(user)
+
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Login error"
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
 
 @apis.route('/user/accounts', methods=['GET'])
 @login_required
@@ -60,6 +100,7 @@ def get_accounts():
         result['data'].append(tmp)
 
     return jsonify(result)
+
 
 @apis.route('/user/transactions', methods=['POST'])
 @login_required
@@ -96,12 +137,13 @@ def get_transactions():
 
     return jsonify(result)
 
+
 @apis.route('/user/transfer', methods=['POST'])
 def transfer_funds():
     result = {
         "status": 0,
         "message": "success",
-        "data": []
+        "data": {}
     }
     try:
         fromacnt = request.form.get('fromAccount')
@@ -114,20 +156,40 @@ def transfer_funds():
 
         if from_account is not None and to_account is not None:
             if from_account.balance - amt >= 0:
+
+                # if amount > 5000, send verification code as an email to user
+                if amt > 5000:
+                    verification_code = utils.generate_random_str()
+                    email_body = "<p> Your verification code is <h3>{}</h3>. Please enter this in 10 minutes. </p>".format(
+                        verification_code)
+                    # user_info = db.session.query(Users).filter(Users.user_id == g.user.get_id()).first()
+                    email_receiver = [g.user.email]
+                    utils.send_email(email_receiver, "Verification code", email_body)
+                    result['status'] = 3
+                    result['data']['verification_code'] = utils.md5(verification_code)
+                    return jsonify(result)
+
                 from_account.balance -= amt
                 to_account.balance += amt
 
                 # insert transfer record
-                transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt, time=curr_time)
+                transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt,
+                                  time=curr_time)
                 db.session.add(transf)
                 db.session.commit()
                 transf_id = transf.transfer_id
 
                 # insert transaction history record
-                transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer', time=curr_time,
-                                          remark='transfer to '+toacnt, operation_id=transf_id, balance_snapshot=from_account.balance)
-                transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer', time=curr_time,
-                                          remark='transfer from '+fromacnt, operation_id=transf_id, balance_snapshot=to_account.balance)
+                transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer',
+                                               time=curr_time,
+                                               remark='transfer to ' + toacnt,
+                                               operation_id=transf_id,
+                                               balance_snapshot=from_account.balance)
+                transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer',
+                                             time=curr_time,
+                                             remark='transfer from ' + fromacnt,
+                                             operation_id=transf_id,
+                                             balance_snapshot=to_account.balance)
                 db.session.add(transaction_from)
                 db.session.add(transaction_to)
                 db.session.commit()
@@ -138,6 +200,51 @@ def transfer_funds():
         else:
             result['status'] = 3
             result['message'] = "Cannot find account"
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Transfer error"
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
+
+@apis.route('/user/transfer_after_check', methods=['POST'])
+def transfer_funds_after_check():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": {}
+    }
+    try:
+        fromacnt = request.form.get('fromAccount')
+        toacnt = request.form.get('toAccount')
+        amt = float(request.form.get('amount'))
+        curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
+
+        from_account = g.user.accounts.filter(Account.account_num == fromacnt).first()
+        to_account = g.user.accounts.filter(Account.account_num == toacnt).first()
+        from_account.balance -= amt
+        to_account.balance += amt
+
+        # insert transfer record
+        transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt, time=curr_time)
+        db.session.add(transf)
+        db.session.commit()
+        transf_id = transf.transfer_id
+
+        # insert transaction history record
+        transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer',
+                                       time=curr_time,
+                                       remark='transfer to ' + toacnt, operation_id=transf_id,
+                                       balance_snapshot=from_account.balance)
+        transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer',
+                                     time=curr_time,
+                                     remark='transfer from ' + fromacnt, operation_id=transf_id,
+                                     balance_snapshot=to_account.balance)
+        db.session.add(transaction_from)
+        db.session.add(transaction_to)
+        db.session.commit()
+
     except Exception, e:
         result['status'] = 1
         result['message'] = "Transfer error"
@@ -176,21 +283,25 @@ def deposit_by_check():
             return jsonify(result)
 
         # save deposit record
-        check_image_front_path = base_dir+"/checkImage/" + check_number +"-front.jpg"
+        check_image_front_path = base_dir + "/checkImage/" + check_number + "-front.jpg"
         check_image_front.save(check_image_front_path)
-        check_image_back_path = base_dir+"/checkImage/" + check_number +"-back.jpg"
+        check_image_back_path = base_dir + "/checkImage/" + check_number + "-back.jpg"
         check_image_back.save(check_image_back_path)
-        deposit = Deposit(account_num=to_account, amount=amount, check_num=check_number, time=curr_time,
-                          img_path_front=check_image_front_path, img_path_back=check_image_back_path)
+        deposit = Deposit(account_num=to_account, amount=amount, check_num=check_number,
+                          time=curr_time,
+                          img_path_front=check_image_front_path,
+                          img_path_back=check_image_back_path)
         db.session.add(deposit)
         db.session.flush()
         # deposit to account
         acnt = db.session.query(Account).filter(Account.account_num == to_account).first()
         acnt.balance += amount
         # save transaction
-        transaction_info = Transaction(account_num=to_account, amount=amount, type="deposit", time=curr_time,
+        transaction_info = Transaction(account_num=to_account, amount=amount, type="deposit",
+                                       time=curr_time,
                                        remark="deposit by check: " + check_number + " " + memo,
-                                       operation_id=deposit.deposit_id, balance_snapshot=acnt.balance)
+                                       operation_id=deposit.deposit_id,
+                                       balance_snapshot=acnt.balance)
         db.session.add(transaction_info)
 
         # commit all changes
@@ -214,15 +325,15 @@ def user_profile():
     user_model = db.session.query(Users).filter(Users.user_id == g.user.get_id()).first()
     if request.method == 'GET':
         result['data'] = {
-        "ssn": user_model.ssn,
-        "username": user_model.username,
-        "firstname": user_model.first_name,
-        "lastname": user_model.last_name,
-        "email": user_model.email,
-        "phone": user_model.phone,
-        "address": user_model.address,
-        "securityQuestion": user_model.security_question,
-        "securityAnswer": user_model.security_answer
+            "ssn": user_model.ssn,
+            "username": user_model.username,
+            "firstname": user_model.first_name,
+            "lastname": user_model.last_name,
+            "email": user_model.email,
+            "phone": user_model.phone,
+            "address": user_model.address,
+            "securityQuestion": user_model.security_question,
+            "securityAnswer": user_model.security_answer
         }
         return jsonify(result)
 
@@ -244,12 +355,13 @@ def user_profile():
             app.logger.error(traceback.format_exc())
     return jsonify(result)
 
+
 @apis.route("/user/paybill", methods=['POST'])
-def pay_bill():
+def pay_bill_check():
     result = {
         "status": 0,
         "message": "success",
-        "data": []
+        "data": {}
     }
     try:
         from_account = request.form.get("fromAccount")
@@ -275,13 +387,22 @@ def pay_bill():
             result['message'] = "You are not the owner of this account"
             return jsonify(result)
 
-
-
         # Validate and deduct money from account
         account_model = Account.query.filter_by(account_num=from_account).first()
         if account_model.balance < amount:
             result['status'] = 2
             result['message'] = "Insufficient balance in your account."
+            return jsonify(result)
+
+        # if amount > 5000, should send email and check the verification code
+        if amount > 5000:
+            verification_code = utils.generate_random_str()
+            email_body = "<p> Your verification code is <h3>{}</h3> Please enter this in 10 minutes. </p>".format(verification_code)
+            # user_info = db.session.query(Users).filter(Users.user_id == g.user.get_id()).first()
+            email_receiver = [g.user.email]
+            utils.send_email(email_receiver, "Verification code", email_body)
+            result['status'] = 3
+            result['data']['verification_code'] = utils.md5(verification_code)
             return jsonify(result)
 
         account_model.balance -= amount
@@ -293,17 +414,20 @@ def pay_bill():
 
         # save bill record
         bill_model = Bill(from_account=from_account, amount=amount, time=curr_time,
-                         biller_name=biller_name, biller_account=biller_account,
-                         biller_address=biller_address + " " + biller_address2,
-                         biller_state=biller_state, biller_city=biller_city,
-                         biller_zip=biller_zip, biller_phone=biller_phone)
+                          biller_name=biller_name, biller_account=biller_account,
+                          biller_address="{} {}".format(biller_address, biller_address2),
+                          biller_state=biller_state, biller_city=biller_city,
+                          biller_zip=biller_zip, biller_phone=biller_phone)
         db.session.add(bill_model)
         db.session.flush()
 
         # save transaction record
-        transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill", time=curr_time,
-                                       remark="pay bill to: " + biller_name + " " + biller_account,
-                                       operation_id=bill_model.bill_id, balance_snapshot=account_model.balance)
+        transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill",
+                                        time=curr_time,
+                                        remark="pay bill to: {} {}".format(biller_name,
+                                                                           biller_account),
+                                        operation_id=bill_model.bill_id,
+                                        balance_snapshot=account_model.balance)
 
         db.session.add(transaction_model)
         db.session.commit()
@@ -314,6 +438,62 @@ def pay_bill():
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
+
+
+@apis.route("/user/paybill_after_check", methods=['POST'])
+def pay_bill_action():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": {}
+    }
+    try:
+        from_account = request.form.get("fromAccount")
+        amount = int(request.form.get("amount"))
+        biller_name = request.form.get("billerName")
+        biller_account = request.form.get("billerAccount")
+        biller_address = request.form.get("billerAddress")
+        biller_address2 = request.form.get("billerAddress2")
+        biller_city = request.form.get("billerCity")
+        biller_state = request.form.get("billerState")
+        biller_zip = request.form.get("billerZip")
+        biller_phone = request.form.get("billerPhone")
+        curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
+        account_model = Account.query.filter_by(account_num=from_account).first()
+        account_model.balance -= amount
+
+        # if biller account in the same bank, add it.
+        account_model_biller = Account.query.filter_by(account_num=biller_account).first()
+        if account_model_biller:
+            account_model_biller.balance += amount
+
+        # save bill record
+        bill_model = Bill(from_account=from_account, amount=amount, time=curr_time,
+                          biller_name=biller_name, biller_account=biller_account,
+                          biller_address="{} {}".format(biller_address, biller_address2),
+                          biller_state=biller_state, biller_city=biller_city,
+                          biller_zip=biller_zip, biller_phone=biller_phone)
+        db.session.add(bill_model)
+        db.session.flush()
+
+        # save transaction record
+        transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill",
+                                        time=curr_time,
+                                        remark="pay bill to: {} {}".format(biller_name,
+                                                                           biller_account),
+                                        operation_id=bill_model.bill_id,
+                                        balance_snapshot=account_model.balance)
+
+        db.session.add(transaction_model)
+        db.session.commit()
+
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Pay bill failed, check your server."
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
 
 @apis.route("/user/enroll/verification", methods=['POST'])
 def check_enroll():
@@ -330,7 +510,8 @@ def check_enroll():
         # TODO check the logic
         user_info = Users.query.filter_by(ssn=ssn, pin=pin).first()
         if user_info is not None:
-            account_info = Account(account_num=any_account, user_id=user_info.user_id, balance=0, type="", created_time=curr_time)
+            account_info = Account(account_num=any_account, user_id=user_info.user_id, balance=0,
+                                   type="", created_time=curr_time)
             db.session.add(account_info)
 
         else:
@@ -346,6 +527,7 @@ def check_enroll():
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
+
 
 @apis.route("/user/enroll/update", methods=['POST'])
 def update_enroll_info():
