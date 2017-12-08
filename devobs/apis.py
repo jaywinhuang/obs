@@ -28,6 +28,8 @@ def login_auth():
     try:
         username = request.form.get('username')
         password = request.form.get('password')
+        if (username is None) or (password is None):
+            raise Exception
         user = Users.query.filter_by(username=username, password=password).first()
         if user is not None:
             login_user(user)
@@ -60,6 +62,48 @@ def get_accounts():
         result['data'].append(tmp)
 
     return jsonify(result)
+
+@apis.route('/user/account-activities', methods=['POST'])
+@login_required
+def get_activities():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": []
+    }
+    try:
+        get_account = request.form.get('accountNumber')
+
+        if get_account == "1":
+            list = []
+            for acnt in g.user.accounts:
+                list.append(acnt.account_num)
+            transactions = db.session.query(Transaction).filter(Transaction.account_num.in_(list))
+        else:
+            if not utils.is_owner(get_account):
+                result['status'] = 3
+                result['message'] = "You are not the owner of this account."
+                return jsonify(result)
+            transactions = db.session.query(Transaction).filter(Transaction.account_num == get_account)
+
+        for trans in transactions:
+            tmp = {
+                "accountNumber": trans.account_num,
+                "dateTime": trans.time,
+                "type": trans.type,
+                "desc": trans.remark,
+                "amount": trans.amount,
+                "balanceSnapshot": trans.balance_snapshot
+            }
+            result['data'].append(tmp)
+
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Get transaction error"
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
 
 @apis.route('/user/transactions', methods=['POST'])
 @login_required

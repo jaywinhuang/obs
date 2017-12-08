@@ -38,34 +38,45 @@ def enroll():
     else:
         return render_template('enroll.html')
 
+
 @app.route('/account')
 @app.route('/account/')
 @app.route('/account-summary')
+@login_required
 def account_main():
     return render_template('account-summary.html')
 
+
 @app.route('/account-activity')
+@login_required
 def account_activity():
     return render_template('account-activity.html')
+
 
 
 @app.route('/transfer')
 @app.route('/transfer/')
 @app.route('/transfer-own')
+@login_required
 def transfer_own():
     return render_template('transfer-own.html')
 
+@login_required
 @app.route('/transfer-other')
 def transfer_other():
     return render_template('transfer-other.html')
 
+
 @app.route('/transfer-wire')
+@login_required
 def transfer_wire():
     return render_template('transfer-wire.html')
+
 
 @app.route('/paybill')
 @app.route('/paybill/')
 @app.route('/paybill-add')
+@login_required
 def paybill_add():
     return render_template('paybill-add.html')
 

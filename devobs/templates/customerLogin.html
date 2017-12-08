@@ -1,162 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>                        
-        <title>Devonshire Online Bank System</title>            
-        
-        <!-- META SECTION -->
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <!-- END META SECTION -->
-        <!-- CSS INCLUDE -->        
-        <link rel="stylesheet" href="../static/css/styles.css">
-        <!-- EOF CSS INCLUDE -->
-    </head>
-    <body>        
-        
-        <!-- APP WRAPPER -->
-        <div class="app app-fh">
+<head>
+    <title>Devonshire Online Bank System</title>
 
-            <!-- START APP CONTAINER -->
-            <div class="app-container" style="background: url(assets/images/background/bg-1.jpg) center center no-repeat fixed;">
-                
-                <div class="app-login-box">                                        
-                    <div class="app-login-box-user"><img src="../static/img/user/no-image.png"></div>
-                    <div class="app-login-box-title">
-                        <div class="title">Customer Login</div>
-                        <div class="subtitle">Login and access to all services</div>                        
+    <!-- META SECTION -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+
+<!-- APP WRAPPER -->
+<div class="app app-fh">
+
+    <!-- START APP CONTAINER -->
+    <div class="app-container"
+         style="background: url(assets/images/background/bg-1.jpg) center center no-repeat fixed;">
+
+        <div class="app-login-box">
+            <div class="app-login-box-user"><img src="../static/img/user/no-image.png"></div>
+            <div class="app-login-box-title">
+                <div class="title">Customer Login</div>
+                <div class="subtitle">Login and access to all services</div>
+            </div>
+            <div class="app-login-box-container">
+                <form action="/api/user/login" method="post" id="form_login">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
                     </div>
-                    <div class="app-login-box-container">
-                        <form action="index.html" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="login" placeholder="Username">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password">
-                            </div>
-                            <div class="form-group">
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Password" required>
+                    </div>
+                    <div id="alert_login" class="alert alert-danger alert-icon-block alert-dismissible" role="alert"
+                         style="display: none">
 
-                                <div class="row">
-                                    <div class="col-md-6 col-xs-6">
-                                        <div class="app-checkbox">
-                                            <label><input type="checkbox" name="app-checkbox-1" value="0"> Remember me</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-xs-6">
-                                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-security-question">Login</a>
-                                                   
-                                    </div>
-                                    <br></br>
-                                    <p><a href="#" style="padding-left: 11px">Forget Password?</a></p>
-                                    <a href="enroll.html" style="padding-left: 11px">Have not enroll yet?</a>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <div class="app-checkbox">
+                                    <label><input type="checkbox" name="app-checkbox-1" value="0"> Remember me</label>
                                 </div>
-                                
                             </div>
-                        </form>
+                            <div class="col-md-6 col-xs-6">
+                                <button type="submit" class="btn btn-success btn-block">Login</button>
+                                <!--<a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-security-question">Login</a> -->
+                            </div>
+                            <br></br>
+                            <p><a href="#" style="padding-left: 11px">Forget Password?</a></p>
+                            <a href="/enroll" style="padding-left: 11px">Have not enroll yet?</a>
+                        </div>
+
                     </div>
-<!--                     <div class="app-login-box-or">
-                        <div class="or">OR</div>
-                    </div>
-                    <div class="app-login-box-container">
-                        <button class="btn btn-facebook btn-block">Connect With Facebook</button>
-                        <button class="btn btn-twitter btn-block">Connect With Twitter</button>
-                    </div> -->
-                    <div class="app-login-box-footer">
-                        &copy; Devonshire 2017. All rights reserved.
+                </form>
+            </div>
+            <!--                     <div class="app-login-box-or">
+                                    <div class="or">OR</div>
+                                </div>
+                                <div class="app-login-box-container">
+                                    <button class="btn btn-facebook btn-block">Connect With Facebook</button>
+                                    <button class="btn btn-twitter btn-block">Connect With Twitter</button>
+                                </div> -->
+            <div class="app-login-box-footer">
+                &copy; Devonshire 2017. All rights reserved.
+            </div>
+        </div>
+
+    </div>
+    <!-- END APP CONTAINER -->
+
+</div>
+<!-- END APP WRAPPER -->
+<!-- MODAL CHANGE PIN -->
+<div class="modal fade" id="modal-security-question" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                          class="icon-cross"></span>
+        </button>
+
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <div class="app-heading app-heading-small app-heading-condensed margin-bottom-30">
+                    <div class="title">
+                        <h5>Security Question</h5>
+                        <p>Answer your secret question</p>
                     </div>
                 </div>
-                                
-            </div>
-            <!-- END APP CONTAINER -->
-           
-        </div>        
-        <!-- END APP WRAPPER -->                
-        <!-- MODAL CHANGE PIN -->
-            <div class="modal fade" id="modal-security-question" tabindex="-1" role="dialog">                        
-                <div class="modal-dialog" role="document">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
 
-                    <div class="modal-content">                        
-                        <div class="modal-body">
-                            
-                            <div class="app-heading app-heading-small app-heading-condensed margin-bottom-30">                                
-                                <div class="title">
-                                    <h5>Security Question</h5>
-                                    <p>Answer your secret question</p>
-                                </div>
-                            </div>                                                        
-                            
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label>Question</label>
-                                            <select class="bs-select" name="question" disabled>                                                        
-                                                <option value="1">Name of your first pet?</option>
-                                               
-                                            </select>
-                                        </div>                                        
-                                    </div>
-                                </div>
-                                <div class="form-group">                                    
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label>Your Answer</label>
-                                            <input type="text" class="form-control" name="answer">
-                                            <span class="help-block">Be honest in your answer</span>
-                                        </div>                                        
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">                                        
-                                        <div class="col-md-12">
-                                            <button type="button" class="btn btn-default pull-right">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                                                        
-                        </div>                        
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Question</label>
+                                <select class="bs-select" name="question" disabled>
+                                    <option value="1">Name of your first pet?</option>
+
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>            
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Your Answer</label>
+                                <input type="text" class="form-control" name="answer">
+                                <span class="help-block">Be honest in your answer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-default pull-right">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
             </div>
-            <!-- END MODAL CHANGE PIN -->
-        <!--
-        <div class="modal fade" id="modal-thanks" tabindex="-1" role="dialog">                        
-            <div class="modal-dialog modal-sm" role="document">                    
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
-                <div class="modal-content">                    
-                    <div class="modal-body">                
-                        <p class="text-center margin-bottom-20">
-                            <img src="assets/images/smile.png" alt="Thank you" style="width: 100px;">
-                        </p>                
-                        <h3 id="modal-thanks-heading" class="text-uppercase text-bold text-lg heading-line-below heading-line-below-short text-center"></h3>
-                        <p class="text-muted text-center margin-bottom-10">Thank you so much for likes</p>
-                        <p class="text-muted text-center">We will do our best to make<br> Boooya template perfect</p>                
-                        <p class="text-center"><button class="btn btn-success btn-clean" data-dismiss="modal">Continue</button></p>
-                    </div>                    
-                </div>
-            </div>            
-        </div>-->
-        
-        <!-- IMPORTANT SCRIPTS -->
-        <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
-        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
-        <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
-        <!-- END IMPORTANT SCRIPTS -->
-	<!--This page script-->
-	 <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
-        <script type="text/javascript" src="../static/js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
-        <!-- APP SCRIPTS -->
-        <script type="text/javascript" src="../static/js/app.js"></script>
-        <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+        </div>
+    </div>
+</div>
+<!-- END MODAL CHANGE PIN -->
+<!--
+<div class="modal fade" id="modal-thanks" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="text-center margin-bottom-20">
+                    <img src="assets/images/smile.png" alt="Thank you" style="width: 100px;">
+                </p>
+                <h3 id="modal-thanks-heading" class="text-uppercase text-bold text-lg heading-line-below heading-line-below-short text-center"></h3>
+                <p class="text-muted text-center margin-bottom-10">Thank you so much for likes</p>
+                <p class="text-muted text-center">We will do our best to make<br> Boooya template perfect</p>
+                <p class="text-center"><button class="btn btn-success btn-clean" data-dismiss="modal">Continue</button></p>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!-- IMPORTANT SCRIPTS -->
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<!-- END IMPORTANT SCRIPTS -->
+<!--This page script-->
+<script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+<script type="text/javascript" src="../static/js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+<!-- APP SCRIPTS -->
+<script type="text/javascript" src="../static/js/app.js"></script>
+<script type="text/javascript" src="../static/js/app_plugins.js"></script>
 <!--         <script type="text/javascript" src="js/app_demo.js"></script> -->
-        <!-- END APP SCRIPTS -->
-    </body>
+<!-- END APP SCRIPTS -->
+<script>
+    $(function () {
+        $("#form_login").submit(function (event) {
+            event.preventDefault();
+
+            var username = $("#username").val();
+            var password = $("#password").val();
+
+            $.ajax({
+                url: "/api/user/login",
+                type: "POST",
+                data: "username=" + username + "&password=" + password,
+                dataType: "json",
+                success: function (res) {
+                    if (res.status == 0) {
+                        window.location.href = "/account-summary";
+                    } else {
+                        $(alert_login).html(res.message);
+                        $(alert_login).show();
+                    }
+                }
+            })
+        })
+    })
+
+</script>
+</body>
 </html>

@@ -98,10 +98,13 @@
     <div class="container">
         <div class="banner-inner">
             <div class="col-md-5 banner-left">
-                <form action="#" method="post">
+                <form id="form_login" action="" method="POST" role="form">
                     <h3>Secure Account Login</h3>
-                    <input type="text" placeholder="Username" required=""/>
-                    <input type="text" placeholder="password" required=""/>
+                    <input type="text" id="username" placeholder="username" required=""/>
+                    <input type="password" id="password" placeholder="password" required=""/>
+                    <div id="alert_login" class="alert alert-danger alert-icon-block alert-dismissible" role="alert"
+                         style="display: none">
+                    </div>
                     <div class="form-group row" style="float:left;display:inline">
                         <div class="col-sm-10">
                             <div class="checkbox">
@@ -120,7 +123,8 @@
                                                   </div>
                                                 </div> -->
                     <div class="submit" style="float:right;display: inline;">
-                        <input type="submit" value="Login" href="#" data-toggle="modal" data-target="#modal-login">
+                        <input type="submit" value="Login">
+                        {#                        <input type="submit" value="Login" href="#" data-toggle="modal" data-target="#modal-login">#}
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-10">
@@ -130,10 +134,11 @@
                             <u><a href="/enroll" style="color: #FFF">Have not enroll yet?</a></u>
                         </div>
                         <div class="col-sm-10">
-                            <u><a href="adminLogin.html" style="color: #FFF">Employee login</a></u>
+                            <u><a href="/admin-login" style="color: #FFF">Employee login</a></u>
                         </div>
                     </div>
                 </form>
+
             </div>
             <div class="col-md-7 banner-right">
                 <h1>Welcome to Devonshire Lending!</h1>
@@ -225,10 +230,11 @@
                     <div class="service-grid-text">
                         <div class="icon">
                             <a href="customerLogin.html"><i class="fa fa-usd" aria-hidden="true"></i>
-                        </a>
-                        <a href="customerLogin.html"><h4>Deposit</h4></a>
-                        <a href="customerLogin.html"><p>You can simply finish your deposit by filling a form and upload
-                            a picture. No need to go to physical branch anymore!</p></a>
+                            </a>
+                            <a href="customerLogin.html"><h4>Deposit</h4></a>
+                            <a href="customerLogin.html"><p>You can simply finish your deposit by filling a form and
+                                upload
+                                a picture. No need to go to physical branch anymore!</p></a>
                         </div>
                     </div>
                 </div>
@@ -293,7 +299,8 @@
     <div class="container" style="text-align: center;">
         <h4 class="title-w3">What customers are saying?</h4>
         <br></br>
-        <p style="color: #1b2531; font-size: 30px"> Average custmer rating &nbsp; <img src="../static/img/rating.png" alt=""/>
+        <p style="color: #1b2531; font-size: 30px"> Average custmer rating &nbsp; <img src="../static/img/rating.png"
+                                                                                       alt=""/>
             &nbsp; 4.8 out of 5 </p>
         <br></br>
         <a href="#" style="color: #3aa5dc; font-size: 20px"> See all reviews</a>
@@ -657,6 +664,33 @@
 </script>
 <!-- //here ends scrolling icon -->
 <script src="../static/js/bars.js"></script>
+
+<script>
+    $(function () {
+        $("#form_login").submit(function (event) {
+            event.preventDefault();
+
+            var username = $("#username").val();
+            var password = $("#password").val();
+
+            $.ajax({
+                url: "/api/user/login",
+                type: "POST",
+                data: "username="+username+"&password="+password,
+                dataType: "json",
+                success: function (res) {
+                    if (res.status == 0) {
+                                                window.location.href = "/account-summary";
+                    } else {
+                        $(alert_login).html(res.message);
+                        $(alert_login).show();
+                    }
+                }
+            })
+        })
+    })
+
+</script>
 </body>
 <!-- //Body -->
 </html>
