@@ -1,15 +1,16 @@
-from flask import render_template, request, jsonify, redirect, g, url_for
-from flask_login import login_user, login_required, current_user, logout_user
-from devobs import app, db, lm
-from .models import Users, Transaction, Account, Bill, Transfer, Deposit
-import traceback
-import time
+import datetime
 import os
-from devobs import babel
-from config import LANGUAGES
 
+from flask import render_template, request, redirect, g, url_for, session
+from flask_login import current_user, logout_user, login_required
+
+from config import LANGUAGES
+from devobs import app, lm
+from devobs import babel
+from .models import Users
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
+
 
 ############# route new template
 
@@ -17,6 +18,7 @@ base_dir = os.path.abspath(os.path.dirname(__file__))
 @app.route('/index')
 def index():
     return render_template('index.html')
+
 
 @app.route('/login')
 def login():
@@ -26,9 +28,11 @@ def login():
     else:
         return render_template('customerLogin.html')
 
+
 @app.route('/admin-login')
 def admin_login():
     return render_template('adminLogin.html')
+
 
 @app.route('/enroll')
 def enroll():
@@ -61,8 +65,9 @@ def account_activity():
 def transfer_own():
     return render_template('transfer-own.html')
 
-@login_required
+
 @app.route('/transfer-other')
+@login_required
 def transfer_other():
     return render_template('transfer-other.html')
 
@@ -80,31 +85,43 @@ def transfer_wire():
 def paybill_add():
     return render_template('paybill-add.html')
 
+
 @app.route('/paybill-manage')
+@login_required
 def paybill_manage():
     return render_template('paybill-manage.html')
+
 
 @app.route('/deposit')
 @app.route('/deposit/')
 @app.route('/deposit-check')
+@login_required
 def deposit_check():
     return render_template('deposit-check.html')
+
 
 @app.route('/loan')
 @app.route('/loan/')
 @app.route('/loan-summary')
+@login_required
 def loan_history():
     return render_template('loan-summary.html')
 
+
 @app.route('/loan-student')
+@login_required
 def loan_student():
     return render_template('loan-student.html')
 
+
 @app.route('/loan-equity')
+@login_required
 def loan_equity():
     return render_template('loan-equity.html')
 
+
 @app.route('/loan-auto')
+@login_required
 def loan_auto():
     return render_template('loan-auto.html')
 
@@ -112,24 +129,33 @@ def loan_auto():
 @app.route('/customer-service')
 @app.route('/customer-service/')
 @app.route("/customer-service-faq")
+@login_required
 def customer_service_faq():
     return render_template("customer-service-faq.html")
 
+
 @app.route('/customer-service-contactus')
+@login_required
 def customer_service_contactus():
     return render_template("customer-service-contactus.html")
 
+
 @app.route('/customer-service-notification')
+@login_required
 def customer_service_notification():
     return render_template("customer-service-notification.html")
+
 
 @app.route('/setting')
 @app.route('/setting/')
 @app.route('/setting-account')
+@login_required
 def setting_account():
     return render_template('setting-account.html')
 
+
 @app.route('/setting-security')
+@login_required
 def setting_security():
     return render_template('setting-security.html')
 
@@ -176,12 +202,17 @@ def logout():
     logout_user()
     return redirect(url_for('login'))
 
+
 @lm.user_loader
 def load_user(id):
     return Users.query.get(int(id))
 
+
 @app.before_request
 def befor_reques():
+    session.permanent = True
+    app.permanent_session_lifetime = datetime.timedelta(minutes=30)
+    # session.modified = True
     g.user = current_user
 
 

@@ -1,8 +1,13 @@
-from flask import render_template, request, jsonify, redirect, g, url_for, Blueprint
-from flask_login import login_user, login_required, current_user, logout_user
+import os
+import time
+import traceback
+
+from flask import request, jsonify, g, Blueprint
+from flask_login import login_user, login_required
+from sqlalchemy import desc
+
 from devobs import db, app, utils
 from .models import Users, Transaction, Account, Bill, Transfer, Deposit
-import traceback, time, os
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 apis = Blueprint("apis", __name__)
@@ -22,7 +27,7 @@ def login_auth():
     result = {
         "status": 0,
         "message": "success",
-        "data": []
+        "data": {}
     }
 
     try:
@@ -42,6 +47,29 @@ def login_auth():
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
+
+
+# @apis.route('/user/login_after_check', methods=['POST'])
+# def login_after_check():
+#     result = {
+#         "status": 0,
+#         "message": "success",
+#         "data": {}
+#     }
+#
+#     try:
+#         username = request.form.get('username')
+#         password = request.form.get('password')
+#         user = Users.query.filter_by(username=username, password=password).first()
+#         login_user(user)
+#
+#     except Exception, e:
+#         result['status'] = 1
+#         result['message'] = "Login error"
+#         app.logger.error(traceback.format_exc())
+#
+#     return jsonify(result)
+
 
 @apis.route('/user/accounts', methods=['GET'])
 @login_required
@@ -63,6 +91,7 @@ def get_accounts():
 
     return jsonify(result)
 
+
 @apis.route('/user/account-activities', methods=['POST'])
 @login_required
 def get_activities():
@@ -78,13 +107,15 @@ def get_activities():
             list = []
             for acnt in g.user.accounts:
                 list.append(acnt.account_num)
-            transactions = db.session.query(Transaction).filter(Transaction.account_num.in_(list))
+            transactions = db.session.query(Transaction).filter(Transaction.account_num.in_(list)).order_by(
+                desc(Transaction.time))
         else:
             if not utils.is_owner(get_account):
                 result['status'] = 3
                 result['message'] = "You are not the owner of this account."
                 return jsonify(result)
-            transactions = db.session.query(Transaction).filter(Transaction.account_num == get_account)
+            transactions = db.session.query(Transaction).filter(Transaction.account_num == get_account).order_by(
+                desc(Transaction.time))
 
         for trans in transactions:
             tmp = {
@@ -140,12 +171,13 @@ def get_transactions():
 
     return jsonify(result)
 
+
 @apis.route('/user/transfer', methods=['POST'])
 def transfer_funds():
     result = {
         "status": 0,
         "message": "success",
-        "data": []
+        "data": {}
     }
     try:
         fromacnt = request.form.get('fromAccount')
@@ -158,27 +190,59 @@ def transfer_funds():
 
         if from_account is not None and to_account is not None:
             if from_account.balance - amt >= 0:
+
                 from_account.balance -= amt
                 to_account.balance += amt
 
+
                 # insert transfer record
-                transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt, time=curr_time)
+                transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt,
+                                  time=curr_time)
                 db.session.add(transf)
                 db.session.commit()
                 transf_id = transf.transfer_id
 
                 # insert transaction history record
-                transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer', time=curr_time,
-                                          remark='transfer to '+toacnt, operation_id=transf_id, balance_snapshot=from_account.balance)
-                transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer', time=curr_time,
-                                          remark='transfer from '+fromacnt, operation_id=transf_id, balance_snapshot=to_account.balance)
+                transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer',
+                                               time=curr_time,
+                                               remark='Transfer to ' + toacnt,
+                                               operation_id=transf_id,
+                                               balance_snapshot=from_account.balance)
+                transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer',
+                                             time=curr_time,
+                                             remark='Transfer from ' + fromacnt,
+                                             operation_id=transf_id,
+                                             balance_snapshot=to_account.balance)
                 db.session.add(transaction_from)
                 db.session.add(transaction_to)
                 db.session.commit()
+                print "from account: %s,  to account: %s,  amount: %s" % (str(from_account.balance), str(to_account.balance),amt)
 
             else:
                 result['status'] = 2
                 result['message'] = "Insufficient funds in from account"
+        elif from_account is not None and to_account is None:
+            if from_account.balance - amt >= 0:
+
+                from_account.balance -= amt
+
+
+                # insert transfer record
+                transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt,
+                                  time=curr_time)
+                db.session.add(transf)
+                db.session.commit()
+                transf_id = transf.transfer_id
+
+                # insert transaction history record
+                transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer',
+                                               time=curr_time,
+                                               remark='Transfer to ' + toacnt,
+                                               operation_id=transf_id,
+                                               balance_snapshot=from_account.balance)
+                db.session.add(transaction_from)
+                db.session.commit()
+
         else:
             result['status'] = 3
             result['message'] = "Cannot find account"
@@ -220,21 +284,25 @@ def deposit_by_check():
             return jsonify(result)
 
         # save deposit record
-        check_image_front_path = base_dir+"/checkImage/" + check_number +"-front.jpg"
+        check_image_front_path = base_dir + "/checkImage/" + check_number + "-front.jpg"
         check_image_front.save(check_image_front_path)
-        check_image_back_path = base_dir+"/checkImage/" + check_number +"-back.jpg"
+        check_image_back_path = base_dir + "/checkImage/" + check_number + "-back.jpg"
         check_image_back.save(check_image_back_path)
-        deposit = Deposit(account_num=to_account, amount=amount, check_num=check_number, time=curr_time,
-                          img_path_front=check_image_front_path, img_path_back=check_image_back_path)
+        deposit = Deposit(account_num=to_account, amount=amount, check_num=check_number,
+                          time=curr_time,
+                          img_path_front=check_image_front_path,
+                          img_path_back=check_image_back_path)
         db.session.add(deposit)
         db.session.flush()
         # deposit to account
         acnt = db.session.query(Account).filter(Account.account_num == to_account).first()
         acnt.balance += amount
         # save transaction
-        transaction_info = Transaction(account_num=to_account, amount=amount, type="deposit", time=curr_time,
+        transaction_info = Transaction(account_num=to_account, amount=amount, type="deposit",
+                                       time=curr_time,
                                        remark="deposit by check: " + check_number + " " + memo,
-                                       operation_id=deposit.deposit_id, balance_snapshot=acnt.balance)
+                                       operation_id=deposit.deposit_id,
+                                       balance_snapshot=acnt.balance)
         db.session.add(transaction_info)
 
         # commit all changes
@@ -258,15 +326,15 @@ def user_profile():
     user_model = db.session.query(Users).filter(Users.user_id == g.user.get_id()).first()
     if request.method == 'GET':
         result['data'] = {
-        "ssn": user_model.ssn,
-        "username": user_model.username,
-        "firstname": user_model.first_name,
-        "lastname": user_model.last_name,
-        "email": user_model.email,
-        "phone": user_model.phone,
-        "address": user_model.address,
-        "securityQuestion": user_model.security_question,
-        "securityAnswer": user_model.security_answer
+            "ssn": user_model.ssn,
+            "username": user_model.username,
+            "firstname": user_model.first_name,
+            "lastname": user_model.last_name,
+            "email": user_model.email,
+            "phone": user_model.phone,
+            "address": user_model.address,
+            "securityQuestion": user_model.security_question,
+            "securityAnswer": user_model.security_answer
         }
         return jsonify(result)
 
@@ -279,8 +347,8 @@ def user_profile():
             user_model.email = request.form.get("email")
             user_model.phone = request.form.get("phone")
             user_model.address = request.form.get("address")
-            user_model.security_question = request.form.get("securityQuestion")
-            user_model.security_answer = request.form.get("securityAnswer")
+            # user_model.security_question = request.form.get("securityQuestion")
+            # user_model.security_answer = request.form.get("securityAnswer")
             db.session.commit()
         except Exception, e:
             result['status'] = 1
@@ -288,16 +356,17 @@ def user_profile():
             app.logger.error(traceback.format_exc())
     return jsonify(result)
 
+
 @apis.route("/user/paybill", methods=['POST'])
-def pay_bill():
+def pay_bill_check():
     result = {
         "status": 0,
         "message": "success",
-        "data": []
+        "data": {}
     }
     try:
         from_account = request.form.get("fromAccount")
-        amount = int(request.form.get("amount"))
+        amount = float(request.form.get("amount"))
         biller_name = request.form.get("billerName")
         biller_account = request.form.get("billerAccount")
         biller_address = request.form.get("billerAddress")
@@ -319,14 +388,13 @@ def pay_bill():
             result['message'] = "You are not the owner of this account"
             return jsonify(result)
 
-
-
         # Validate and deduct money from account
         account_model = Account.query.filter_by(account_num=from_account).first()
         if account_model.balance < amount:
             result['status'] = 2
             result['message'] = "Insufficient balance in your account."
             return jsonify(result)
+
 
         account_model.balance -= amount
 
@@ -337,17 +405,20 @@ def pay_bill():
 
         # save bill record
         bill_model = Bill(from_account=from_account, amount=amount, time=curr_time,
-                         biller_name=biller_name, biller_account=biller_account,
-                         biller_address=biller_address + " " + biller_address2,
-                         biller_state=biller_state, biller_city=biller_city,
-                         biller_zip=biller_zip, biller_phone=biller_phone)
+                          biller_name=biller_name, biller_account=biller_account,
+                          biller_address="{} {}".format(biller_address, biller_address2),
+                          biller_state=biller_state, biller_city=biller_city,
+                          biller_zip=biller_zip, biller_phone=biller_phone)
         db.session.add(bill_model)
         db.session.flush()
 
         # save transaction record
-        transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill", time=curr_time,
-                                       remark="pay bill to: " + biller_name + " " + biller_account,
-                                       operation_id=bill_model.bill_id, balance_snapshot=account_model.balance)
+        transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill",
+                                        time=curr_time,
+                                        remark="pay bill to: {} {}".format(biller_name,
+                                                                           biller_account),
+                                        operation_id=bill_model.bill_id,
+                                        balance_snapshot=account_model.balance)
 
         db.session.add(transaction_model)
         db.session.commit()
@@ -374,7 +445,8 @@ def check_enroll():
         # TODO check the logic
         user_info = Users.query.filter_by(ssn=ssn, pin=pin).first()
         if user_info is not None:
-            account_info = Account(account_num=any_account, user_id=user_info.user_id, balance=0, type="", created_time=curr_time)
+            account_info = Account(account_num=any_account, user_id=user_info.user_id, balance=0,
+                                   type="", created_time=curr_time)
             db.session.add(account_info)
 
         else:
@@ -390,6 +462,7 @@ def check_enroll():
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
+
 
 @apis.route("/user/enroll/update", methods=['POST'])
 def update_enroll_info():

@@ -14,23 +14,20 @@
                     </div>
                 </div>
 
-                <div class="block-content">
+                <form id="transfer-form" class="block-content" action="" method="post">
 
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>From</label>
-                                <select class="bs-select" name="from" title="Choose your card">
-                                    <option value="1" selected="selected">$1,544 Checking Account</option>
-                                    <option value="2">$38,109 Saving Account</option>
+                                <select id="fromAccount" name="fromAccount" >
+
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Recipient</label>
-                                    <select class="bs-select" name="from" title="Choose your card">
-                                        <option value="1">$1,544 Checking Account</option>
-                                        <option value="2" selected="selected">$38,109 Saving Account</option>
+                                    <select id="toAccount" name="toAccount" >
 
                                     </select>
                                 </div>
@@ -42,7 +39,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Amout</label>
-                                <input type="text" class="form-control" name="amout" placeholder="0.00">
+                                <input type="text" class="form-control" id="amount" name="amount" placeholder="$0.00" required>
                             </div>
                             <div class="col-md-6">
                                 <label>Date</label>
@@ -54,8 +51,16 @@
                     </div>
 
                     <div>
-                        <button class="btn btn-link pull-left padding-left-0">Information about fee</button>
-                        <button class="btn btn-primary btn-clean pull-right">Transfer</button>
+                        <a class="btn btn-link pull-left padding-left-0">Information about fee</a>
+                        <button type="submit" class="btn btn-primary btn-clean pull-right">Transfer</button>
+                    </div>
+                </form>
+                <div id="alertBlock" style="display: none" class="col-md-6">
+                    <div class="alert alert-info alert-icon-block alert-dismissible" role="alert">
+                        <div class="alert-icon"><span class="icon-clock"></span></div>
+                        <div id="alertMessage"></div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                class="fa fa-times"></span></button>
                     </div>
                 </div>
             </div>
@@ -69,5 +74,48 @@
 
 
 {% block scripts %}
+<script type="application/javascript">
+$(function () {
+    $.ajax({
+        type: "GET",
+        url: "/api/user/accounts",
+        dataType: "json",
+        success: function (data) {
+            if (data.status == 0) {
+                sessionStorage.accounts = JSON.stringify(data.data);
+            } else {
+                alert(data.msg);
+            }
+        }
+    }).done(function () {
+        $.when(fillSelectAccounts("fromAccount")).then($("#fromAccount").selectpicker());
+        $.when(fillSelectAccounts("toAccount")).then($("#toAccount").selectpicker());
 
+        $("#transfer-form").submit(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: "/api/user/transfer",
+                type: "POST",
+                data: {
+                    "fromAccount": $("#fromAccount").val(),
+                    "toAccount": $("#toAccount").val(),
+                    "amount": $("#amount").val()
+                },
+                dataType: "json",
+                success: function (d) {
+                    if (d.status == 0) {
+                        $("#alertMessage").html("Transfer success.")
+                    } else {
+                        $("#alertMessage").html(d.message)
+                        console.log(d.message)
+                    }
+                    $("#alertBlock").show()
+                }
+            });
+        });
+    })
+
+})
+</script>
 {% endblock %}

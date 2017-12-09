@@ -14,6 +14,7 @@ class Users(db.Model):
     last_name = db.Column(db.String(64), nullable=True, unique=False)
     email = db.Column(db.String(64), nullable=True, unique=True)
     phone = db.Column(db.String(64), nullable=True, unique=True)
+    phone2 = db.Column(db.String(64), nullable=True, unique=True)
     address = db.Column(db.String(255), nullable=True, unique=False)
     security_question = db.Column(db.String(255), nullable=True, unique=False)
     security_answer = db.Column(db.String(64), nullable=True, unique=False)
@@ -47,7 +48,7 @@ class Account(db.Model):
     __tablename__ = 'account'
     account_num = db.Column(db.BIGINT, primary_key=True, nullable=False, unique=True)
     user_id = db.Column(db.BIGINT, db.ForeignKey('user.user_id'), nullable=False)
-    balance = db.Column(db.FLOAT, nullable=False)
+    balance = db.Column(db.DECIMAL(precision='20,2'), nullable=False)
     type = db.Column(db.String(64), nullable=False)
     created_time = db.Column(db.DateTime, nullable=False)
     # relationship columns
@@ -65,7 +66,7 @@ class Transfer(db.Model):
     transfer_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     from_account = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
     to_account = db.Column(db.BIGINT, nullable=False)
-    amount = db.Column(db.FLOAT, nullable=False)
+    amount = db.Column(db.DECIMAL(precision='20,2'), nullable=False)
     time = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
@@ -76,7 +77,7 @@ class Bill(db.Model):
     __tablename__ = 'bill'
     bill_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     from_account = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
-    amount = db.Column(db.FLOAT, nullable=False)
+    amount = db.Column(db.DECIMAL(precision='20,2'), nullable=False)
     time = db.Column(db.DateTime, nullable=False)
     biller_name = db.Column(db.String(64), nullable=False)
     biller_account = db.Column(db.BIGINT, nullable=False)
@@ -94,7 +95,7 @@ class Deposit(db.Model):
     __tablename__ = 'deposit'
     deposit_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     account_num = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
-    amount = db.Column(db.FLOAT, nullable=False)
+    amount = db.Column(db.DECIMAL(precision='20,2'), nullable=False)
     check_num = db.Column(db.BIGINT, nullable=False)
     memo = db.Column(db.String(64), nullable=True)
     time = db.Column(db.DateTime, nullable=False)
@@ -109,8 +110,8 @@ class Transaction(db.Model):
     __tablename__ = 'transaction'
     transaction_id = db.Column(db.BIGINT, primary_key=True, autoincrement=True)
     account_num = db.Column(db.BIGINT, db.ForeignKey('account.account_num'), nullable=False)
-    amount = db.Column(db.FLOAT, nullable=False)
-    balance_snapshot = db.Column(db.FLOAT, nullable=False)
+    amount = db.Column(db.DECIMAL(precision='20,2'), nullable=False)
+    balance_snapshot = db.Column(db.DECIMAL(precision='20,2'), nullable=False)
     type = db.Column(db.String(64), nullable=False)
     time= db.Column(db.DateTime, nullable=False)
     remark = db.Column(db.String(64), nullable=False)

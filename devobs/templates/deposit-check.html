@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                <form class="form-horizontal">
+                <form id="deposit-form" class="form-horizontal" action="/api/user/deposit" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="col-md-2 control-label">Deposit Into:</label>
                         <div class="col-md-10">
@@ -49,7 +49,6 @@
                         <div class="col-md-10">
                             <input type="text" class="form-control" placeholder="Enter ..." id="amount" name="amount"
                                    required>
-                            <span class="help-block">Remaining deposit limit: $5,000.00</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -60,11 +59,18 @@
                         </div>
                     </div>
                     <p>
-                        <button type="button" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </p>
                 </form>
 
+            </div>
+            <div id="alertBlock" style="display: none" class="col-md-6">
+                <div class="alert alert-info alert-icon-block alert-dismissible" role="alert">
+                    <div class="alert-icon"><span class="icon-clock"></span></div>
+                    <div id="alertMessage"></div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            class="fa fa-times"></span></button>
+                </div>
             </div>
             <!-- END Deposit Check -->
 
@@ -76,5 +82,9 @@
 
 
 {% block scripts %}
+    <script type="application/javascript">
+        $(function () {
 
+        })
+    </script>
 {% endblock %}

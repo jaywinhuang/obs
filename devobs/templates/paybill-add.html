@@ -10,73 +10,161 @@
 
                 <div class="app-heading app-heading-small">
                     <div class="title">
-                        <h2>Add bills</h2>
+                        <h2>Pay bills</h2>
                         <p>Please enter the information as it appears on a bill or invoice from the company you want to
                             pay.</p>
                     </div>
                 </div>
 
-                <form class="form-horizontal">
+                <form id="bill-form" class="form-horizontal">
                     <div class="form-group">
                         <label class="col-md-2 control-label">Biller Name</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="billerName" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Account Number</label>
+                        <label class="col-md-2 control-label">Biller's Account Number</label>
                         <div class="col-md-10">
-                            <input type="text" class="mask_credit form-control" name="card"
-                                   placeholder="Account Number">
+                            <input class="form-control" name="billerAccount" placeholder="Account Number"
+                                   type="text" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Confirm Account Number</label>
+                        <label class="col-md-2 control-label">Confirm Biller's Account Number</label>
                         <div class="col-md-10">
-                            <input type="text" class="mask_credit form-control" name="card"
-                                   placeholder="Account Number">
+                            <input class="form-control" name="billerAccount2" placeholder="Account Number"
+                                   type="text" required>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="col-md-2 control-label">Biller Address 1</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="billerAddress" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Biller Address 2</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="billerAddress2" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Biller City/State</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="billerCity" required>
+                            <select name="billerState" class="form-control" id="billerState">
+                                <option value="">State</option>
+                                <option value="AA">AA</option>
+                                <option value="AE">AE</option>
+                                <option value="AK">AK</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AR">AR</option>
+                                <option value="AS">AS</option>
+                                <option value="AZ">AZ</option>
+                                <option value="CA">CA</option>
+                                <option value="CO">CO</option>
+                                <option value="CT">CT</option>
+                                <option value="DC">DC</option>
+                                <option value="DE">DE</option>
+                                <option value="FL">FL</option>
+                                <option value="FM">FM</option>
+                                <option value="GA">GA</option>
+                                <option value="GU">GU</option>
+                                <option value="HI">HI</option>
+                                <option value="IA">IA</option>
+                                <option value="ID">ID</option>
+                                <option value="IL">IL</option>
+                                <option value="IN">IN</option>
+                                <option value="KS">KS</option>
+                                <option value="KY">KY</option>
+                                <option value="LA">LA</option>
+                                <option value="MA">MA</option>
+                                <option value="MD">MD</option>
+                                <option value="ME">ME</option>
+                                <option value="MH">MH</option>
+                                <option value="MI">MI</option>
+                                <option value="MN">MN</option>
+                                <option value="MO">MO</option>
+                                <option value="MP">MP</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="NC">NC</option>
+                                <option value="ND">ND</option>
+                                <option value="NE">NE</option>
+                                <option value="NH">NH</option>
+                                <option value="NJ">NJ</option>
+                                <option value="NM">NM</option>
+                                <option value="NV">NV</option>
+                                <option value="NY">NY</option>
+                                <option value="OH">OH</option>
+                                <option value="OK">OK</option>
+                                <option value="OR">OR</option>
+                                <option value="PA">PA</option>
+                                <option value="PR">PR</option>
+                                <option value="PW">PW</option>
+                                <option value="RI">RI</option>
+                                <option value="SC">SC</option>
+                                <option value="SD">SD</option>
+                                <option value="TN">TN</option>
+                                <option value="TX">TX</option>
+                                <option value="UT">UT</option>
+                                <option value="VA">VA</option>
+                                <option value="VI">VI</option>
+                                <option value="VT">VT</option>
+                                <option value="WA">WA</option>
+                                <option value="WI">WI</option>
+                                <option value="WV">WV</option>
+                                <option value="WY">WY</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Biller ZIP Code</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="billerZip" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Biller Phone Number</label>
                         <div class="col-md-3">
-                            <input type="text" maxlength="13" class="form-control">
+                            <input type="text" maxlength="13" class="form-control" name="billerPhone" required>
                             <span class="help-block">（XXX)XXX-XXXX</span>
                         </div>
 
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Account Number</label>
+                        <div class="col-md-10">
+                            <select id="fromAccount" name="fromAccount">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Bill Amount</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="amount" placeholder="amount $ " required>
+                        </div>
+                    </div>
                     <p>
-                        <button type="button" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </p>
 
 
                 </form>
 
+
+            </div>
+            <div id="alertBlock" style="display: none" class="col-md-6">
+                <div class="alert alert-info alert-icon-block alert-dismissible" role="alert">
+                    <div class="alert-icon"><span class="icon-clock"></span></div>
+                    <div id="alertMessage"></div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            class="fa fa-times"></span></button>
+                </div>
             </div>
             <!-- END Add bill -->
 
@@ -88,5 +176,43 @@
 
 
 {% block scripts %}
+    <script type="application/javascript">
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/api/user/accounts",
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 0) {
+                        sessionStorage.accounts = JSON.stringify(data.data);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            }).done(function () {
+                $.when(fillSelectAccounts("fromAccount")).then($("#fromAccount").selectpicker());
 
+                $("#bill-form").submit(function (event) {
+                    event.preventDefault();
+                    var form_data = $(this).serialize();
+
+                    $.ajax({
+                        url: "/api/user/paybill",
+                        type: "POST",
+                        data: form_data,
+                        dataType: "json",
+                        success: function (d) {
+                            if (d.status == 0) {
+                                $("#alertMessage").html("Pay bill success.")
+                            } else {
+                                $("#alertMessage").html(d.message)
+                                console.log(d.message)
+                            }
+                            $("#alertBlock").show()
+                        }
+                    });
+                });
+            })
+        })
+    </script>
 {% endblock %}

@@ -148,6 +148,462 @@
 
     </div>
     <!-- END PAGE CONTAINER -->
+    <!-- MODAL PASSWORD -->
+    <div class="modal fade" id="modal-password" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                              class="icon-cross"></span>
+            </button>
+
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="app-heading app-heading-small app-heading-condensed margin-bottom-30">
+                        <div class="title">
+                            <h5>Password Update</h5>
+                            <p>Update your password information</p>
+                        </div>
+                    </div>
+
+                    <form action="#" method="post" id="password_update">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Old Password</label>
+                                    <input type="password" class="form-control" id="old_password" name="old_password"
+                                           placeholder="Your current password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>New Password</label>
+                                    <input type="password" class="form-control" id="new_password" name="new_password"
+                                           placeholder="Your new password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Repeat Password</label>
+                                    <input type="password" class="form-control" id="rep_password" name="rep_assword"
+                                           placeholder="Repeat your password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="app-checkbox">
+                                        <label><input type="checkbox" value="1" id="show_password"> Show
+                                            passwords</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <button type="button" class="btn btn-default pull-right">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL PASSWORD -->
+
+    <!-- MODAL CHANGE PIN -->
+    <div class="modal fade" id="modal-change-pin" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                              class="icon-cross"></span>
+            </button>
+
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="app-heading app-heading-small app-heading-condensed margin-bottom-30">
+                        <div class="title">
+                            <h5>Change Pin</h5>
+                            <p>Modify your access code</p>
+                        </div>
+                    </div>
+
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your new pin</label>
+                                    <input type="text" class="form-control mask_pin" name="new_pin">
+                                    <span class="help-block">Please use unique 4 digits pin code</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default pull-right">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL CHANGE PIN -->
+
+    <!-- MODAL CHANGE PIN -->
+    <div class="modal fade" id="modal-change-question" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                              class="icon-cross"></span>
+            </button>
+
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="app-heading app-heading-small app-heading-condensed margin-bottom-30">
+                        <div class="title">
+                            <h5>Update Question</h5>
+                            <p>Modify your secret question</p>
+                        </div>
+                    </div>
+
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Question</label>
+                                    <select class="bs-select" name="question">
+                                        <option value="1">Name of your first pet?</option>
+                                        <option value="2">Name of your first teacher?</option>
+                                        <option value="3">Your first car model?</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your Answer</label>
+                                    <input type="text" class="form-control" name="answer">
+                                    <span class="help-block">Be honest in your answer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default pull-right">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL CHANGE PIN -->
+    <!-- MODAL ALERT SETTINGS - EDIT BY CHANG LIU -->
+    <div class="modal fade" id="modal-alert-settings" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                              class="icon-cross"></span>
+            </button>
+
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="app-heading app-heading-small app-heading-condensed margin-bottom-30">
+                        <div class="title">
+                            <h5>Alerts</h5>
+                            <p>Update your alert profile</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a href="#tabs-4" data-toggle="tab">Checking Account ************9871</a>
+                            </li>
+                            <li><a href="#tabs-5" data-toggle="tab">Saving Account ************0001</a></li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <!--saving account alerts-->
+                            <div class="tab-pane active" id="tabs-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Alert</th>
+                                        <th>Status</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            Available balance is less than $<a href="#" id="alert-balance-low"
+                                                                               data-type="text" data-pk="1"
+                                                                               data-title="Enter balance">100</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Overdraft
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Service Alerts
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            ATM cash withdrawal greater than $<a href="#" id="alert-atm"
+                                                                                 data-type="text" data-pk="1"
+                                                                                 data-title="Enter balance">100</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Check greater than $<a href="#" id="alert-check" data-type="text"
+                                                                   data-pk="1" data-placement="right"
+                                                                   data-title="Enter balance">500</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Direct deposit greater than $<a href="#" id="alert-direct-deposit"
+                                                                            data-type="text" data-pk="1"
+                                                                            data-title="Enter balance">1</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transfer greater than $<a href="#" id="alert-transfer" data-type="text"
+                                                                      data-pk="1" data-title="Enter balance">100</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transfer - final recurring
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transfer - failed
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Wire transfer greater than $ <a href="#" id="alert-wire-transfer"
+                                                                            data-type="text" data-pk="1"
+                                                                            data-title="Enter balance"></a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--saving account alerts-->
+                            <div class="tab-pane" id="tabs-5">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Alert</th>
+                                        <th>Status</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            Available balance is less than $<a href="#" id="saving-alert-balance-low"
+                                                                               data-type="text" data-pk="1"
+                                                                               data-title="Enter balance">100</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Overdraft
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Service Alerts
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            ATM cash withdrawal greater than $<a href="#" id="saving-alert-atm"
+                                                                                 data-type="text" data-pk="1"
+                                                                                 data-title="Enter balance">10</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Check greater than $<a href="#" id="saving-alert-check" data-type="text"
+                                                                   data-pk="1" data-placement="right"
+                                                                   data-title="Enter balance"></a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Direct deposit greater than $<a href="#" id="saving-alert-direct-deposit"
+                                                                            data-type="text" data-pk="1"
+                                                                            data-title="Enter balance">1</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transfer greater than $<a href="#" id="saving-alert-transfer"
+                                                                      data-type="text" data-pk="1"
+                                                                      data-title="Enter balance">100</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transfer - final recurring
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Transfer - failed
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" checked value="0">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Wire transfer greater than $ <a href="#" id="saving-alert-wire-transfer"
+                                                                            data-type="text" data-pk="1"
+                                                                            data-title="Enter balance">100</a>.00
+
+                                        </td>
+                                        <td><label class="switch">
+                                            <input type="checkbox" name="switch_1" value="1">
+                                        </label>
+                                        </td>
+
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL ALERT SETTINGS -->
 {% endblock %}
 
 
