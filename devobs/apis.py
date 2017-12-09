@@ -40,7 +40,7 @@ def login_auth():
             login_user(user)
         else:
             result['status'] = 2
-            result['message'] = "user name or password incorrect"
+            result['message'] = "user name or password incorrect. For test, username:obs, password: obs"
     except Exception, e:
         result['status'] = 1
         result['message'] = "Login error"
@@ -194,7 +194,6 @@ def transfer_funds():
                 from_account.balance -= amt
                 to_account.balance += amt
 
-
                 # insert transfer record
                 transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt,
                                   time=curr_time)
@@ -216,16 +215,15 @@ def transfer_funds():
                 db.session.add(transaction_from)
                 db.session.add(transaction_to)
                 db.session.commit()
-                print "from account: %s,  to account: %s,  amount: %s" % (str(from_account.balance), str(to_account.balance),amt)
+                print "from account: %s,  to account: %s,  amount: %s" % (
+                str(from_account.balance), str(to_account.balance), amt)
 
             else:
                 result['status'] = 2
                 result['message'] = "Insufficient funds in from account"
         elif from_account is not None and to_account is None:
             if from_account.balance - amt >= 0:
-
                 from_account.balance -= amt
-
 
                 # insert transfer record
                 transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt,
@@ -395,7 +393,6 @@ def pay_bill_check():
             result['message'] = "Insufficient balance in your account."
             return jsonify(result)
 
-
         account_model.balance -= amount
 
         # if biller account in the same bank, add it.
@@ -429,6 +426,7 @@ def pay_bill_check():
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
+
 
 @apis.route("/user/enroll/verification", methods=['POST'])
 def check_enroll():

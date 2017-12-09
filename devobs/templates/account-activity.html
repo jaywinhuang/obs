@@ -83,7 +83,7 @@
 
 {% block scripts %}
     <script type="application/javascript">
-        function getAccountActivities(accountNumber) {
+        function getAccountActivities(accountNumber, lines) {
             $.ajax({
                 type: "POST",
                 url: "/api/user/account-activities",
@@ -92,7 +92,9 @@
                 success: function (d) {
                     $("#activities-list").html('');
                     $.each(d.data, function (index, value) {
-                        printAccountActivities(value);
+                        if (index < lines) {
+                            printAccountActivities(value);
+                        }
                     });
                 }
             });
@@ -122,12 +124,64 @@
             $("#activities-list").append(activitiesInfo);
         }
 
-        $(function () {
+        function getAccountActivities(accountNumber, lines) {
+            $.ajax({
+                type: "POST",
+                url: "/api/user/account-activities",
+                data: {"accountNumber": accountNumber},
+                dataType: "json",
+                success: function (d) {
+                    $("#activities-list").html('');
+                    $.each(d.data, function (index, value) {
+                        if (index < lines) {
+                            printAccountActivities(value);
+                        }
+                    });
+                }
+            });
+        }
+
+        function printAccountActivities(data) {
+            var activitiesInfo = "<div class=\"listing-item listing-item-with-icon\">\n" +
+                "                                <span class=\"icon-menu-circle listing-item-icon\"></span>\n" +
+                "                                <h4 class=\"text-rg text-bold\">" + data['desc'] + "<span\n" +
+                "                                        class=\"text-muted pull-right\">" + data['dateTime'] + "</span></h4>\n" +
+                "                                <div class=\"list-group list-group-inline\">\n" +
+                "                                    <div class=\"list-group-item col-md-4 col-sm-4\">\n" +
+                "                                        <span class=\"text-muted\">Account</span><br>\n" +
+                "                                        <span class=\"text-bold\">******" + String(data['accountNumber']).substr(-4) + "</span>\n" +
+                "                                    </div>\n" +
+                "                                    <div class=\"list-group-item col-md-4 col-sm-4\">\n" +
+                "                                        <span class=\"text-muted\">Amount</span><br>\n" +
+                "                                        <span class=\"text-bold \">" + accounting.formatMoney(data['amount']) + "</span>\n" +
+                "                                    </div>\n" +
+                "                                    <div class=\"list-group-item col-md-4 col-sm-4\">\n" +
+                "                                        <span class=\"text-muted\">Balance</span><br>\n" +
+                "                                        <span class=\"text-bold\">" + accounting.formatMoney(data['balanceSnapshot']) + "</span>\n" +
+                "                                    </div>\n" +
+                "                                </div>\n" +
+                "                            </div>";
+            console.log(activitiesInfo)
+            $("#activities-list").append(activitiesInfo);
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "/api/user/accounts",
+            dataType: "json",
+            success: function (data) {
+                if (data.status == 0) {
+                    sessionStorage.accounts = JSON.stringify(data.data);
+                } else {
+                    alert(data.msg);
+                }
+            }
+        }).done(function () {
             $.when(fillSelectAccounts("select-account")).then($("#select-account").selectpicker());
-            getAccountActivities($("#select-account").val());
+            getAccountActivities($("#select-account").val(), 1000);
 
             $("#select-account").change(function () {
-                getAccountActivities($(this).val());
+                getAccountActivities($(this).val(), 1000);
             });
         });
 

@@ -84,7 +84,45 @@
 {% block scripts %}
     <script type="application/javascript">
         $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/api/user/accounts",
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 0) {
+                        sessionStorage.accounts = JSON.stringify(data.data);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            }).done(function () {
+                $.when(fillSelectAccounts("toAccount")).then($("#toAccount").selectpicker());
 
+                $("#deposit-form").submit(function (event) {
+                    event.preventDefault();
+                    var form = $(this)[0]; // You need to use standard javascript object here
+                    var formData = new FormData(form);
+                    console.log(formData);
+
+                    $.ajax({
+                        url: "/api/user/deposit",
+                        type: "POST",
+                        data: formData,
+                        dataType: "json",
+                        contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                        processData: false, // NEEDED, DON'T OMIT THIS
+                        success: function (d) {
+                            if (d.status == 0) {
+                                $("#alertMessage").html("Deposit success.")
+                            } else {
+                                $("#alertMessage").html(d.message)
+                                console.log(d.message)
+                            }
+                            $("#alertBlock").show()
+                        }
+                    });
+                });
+            })
         })
     </script>
 {% endblock %}
