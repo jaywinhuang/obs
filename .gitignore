@@ -4,3 +4,7 @@ flask-env/
 .DS_Store
 .idea/inspectionProfiles/
 logs/
+/devobs/templates/.idea/
+/migrateDB.sh
+/obs.log
+/babel.cfg
