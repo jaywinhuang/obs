@@ -16,6 +16,7 @@
                     </div>
                 </div>
 
+                <form class="form-horizontal">
                 <div class="form-group">
                     <label class="col-md-2 control-label">School State</label>
                     <div class="col-md-2">
@@ -76,90 +77,81 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">School Name:</label>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control">
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" name="" required>
                     </div>
                 </div>
-                <form class="form-horizontal">
                     <div class="form-group">
                         <div class="radio">
-                            <label class="col-md-5 control-label">Would you like to apply with a cosigner?</label>
-                            <label><input type="radio" name="optionsRadios" id="" value="" checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <label><input type="radio" name="optionsRadios" id="" value="">No</label>
+                            <label class="col-md-2 control-label">Would you like to apply with a cosigner?</label>
+                            <label><input type="radio" name="cosigner" id="" value="" checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>input type="radio" name="cosigner" id="" value="" required>No</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Cosigner Current Employer:</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Cosigner Work Address:</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Cosigner Work Telephone:</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Citizenship Status:</label>
                         <div class="col-md-6">
                             <select class="form-control" id="" name="" required>
-                                <option>U.S. Citizen</option>
-                                <option>Eligible Non-Citizen</option>
+                                <option value="citizen">U.S. Citizen</option>
+                                <option value="non-citizen">Eligible Non-Citizen</option>
                             </select>
                         </div>
                     </div>
-                    <form class="form-horizontal">
                         <div class="form-group">
                             <div class="radio">
-                                <label class="col-md-5 control-label">Will you be enrolled at least half time?</label>
-                                <label><input type="radio" name="optionsRadios" id="" value=""
-                                              checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label><input type="radio" name="optionsRadios" id="" value="">No</label>
+                                <label class="col-md-2 control-label">Will you be enrolled at least half time?</label>
+                                <label><input type="radio" name="enrolled" id="" value="" checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="enrolled" id="" value="">No</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Loan Amount:</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                                <input type="text" class="form-control" id="" name="" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Email Address:</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Enter ..." id="" name="" required>
+                                <input type="text" class="form-control" id="" name="" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="radio">
-                                <label class="col-md-5 control-label">Are you at least the age of majority for your
+                                <label class="col-md-2 control-label">Are you at least the age of majority for your
                                     state of residence?</label>
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="" value="" checked="checked">Yes
-                                </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label>
-                                    <input type="radio" name="optionsRadios" id="" value="">No
-                                </label>
+                                    <label><input type="radio" name="age" id="" value="" checked="checked">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label><input type="radio" name="age" id="" value="">No</label>
                             </div>
                         </div>
                         <p>
                             <button type="button" class="btn btn-primary">Submit</button>
                             <button type="button" class="btn btn-primary btn-clean">Cancel</button>
                         </p>
-                    </form>
+                </form>
+                </div>
 
-            </div>
             <!-- END Student Loan -->
-
-
+            </div>
         </div>
-    </div>
     <!-- END PAGE CONTAINER -->
 {% endblock %}
 
