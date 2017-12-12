@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Devonshire Online</title>
+
+    <!-- META SECTION -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+
+<!-- APP WRAPPER -->
+<div class="app">
+
+    <!-- START APP CONTAINER -->
+    <div class="app-container">
+        <!-- START APP HEADER -->
+        <div class="app-header">
+            <div class="container container-boxed">
+                <ul class="app-header-buttons visible-mobile">
+                    <li><a href="#" class="btn btn-link btn-icon" data-navigation-horizontal-toggle="true"><span
+                            class="icon-menu"></span></a></li>
+                </ul>
+                <a href="/index" class="app-header-logo app-header-logo-light app-header-logo-condensed">Project</a>
+                <ul class="app-header-buttons pull-right">
+                    <li><a href="/logout" class="btn btn-default">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- END APP HEADER  -->
+
+        <!-- START APP CONTENT -->
+        <div class="app-content">
+            <div class="app-navigation-horizontal margin-bottom-15">
+                <div class="container container-boxed">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#"><span class="icon-home"></span> Manage Account</a>
+                                <ul>
+                                    <li><a href="/admin-profile">Account Profile</a></li>
+                                    <li><a href="/admin-security"> Activity and Security</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/admin-loan"><span class="icon-earth"></span> Loan Review</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="icon-store"></span> Staff Management</a>
+                            </li>
+                            <li>
+                                <a href="/admin-transfer"><span class="icon-license"></span> Data Transfer</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+            <!-- START PAGE CONTAINER -->
+            {% block content %} {% endblock %}
+            <!-- END PAGE CONTAINER -->
+
+        </div>
+        <!-- END APP CONTENT -->
+
+    </div>
+    <!-- END APP CONTAINER -->
+
+    <!-- START APP FOOTER -->
+    <div class="app-footer app-footer-default" id="footer">
+
+        <div class="container container-boxed">
+            <div class="app-footer-line">
+                <div class="copyright">&copy; 2017 Devonshire. All right reserved.
+                </div>
+                <div class="pull-right">
+                    <ul class="list-inline">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END APP FOOTER -->
+</div>
+<!-- END APP WRAPPER -->
+
+<!-- IMPORTANT SCRIPTS -->
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="../static/js/myAccount_summary.js"></script>
+<!-- END IMPORTANT SCRIPTS -->
+
+<!-- THIS PAGE SCRIPTS -->
+<script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+<script type="text/javascript"
+        src="../static/js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../static/js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+<!-- END THIS PAGE SCRIPTS -->
+<!-- APP SCRIPTS -->
+<script type="text/javascript" src="../static/js/app.js"></script>
+<script type="text/javascript" src="../static/js/app_plugins.js"></script>
+<script type="text/javascript" src="../static/js/app_demo.js"></script>
+<!-- END APP SCRIPTS -->
+<script src="../static/js/main.js" type="application/javascript"></script>
+<script src="../static/js/accounting.js" type="application/javascript"></script>
+<script src="../static/js/app_demo_editable.js"></script>
+<!-- THIS PAGE SCRIPTS -->
+<script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+<!--editable script-->
+<script src="../static/js/vendor/select2/select2.full.min.js"></script>
+
+<script src="../static/js/vendor/xeditable/bootstrap-editable.min.js"></script>
+<script src="../static/js/vendor/xeditable/ext/address.js"></script>
+{% block scripts %}
+
+{% endblock %}
+
+</body>
+</html>

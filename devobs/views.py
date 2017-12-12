@@ -159,6 +159,22 @@ def setting_account():
 def setting_security():
     return render_template('setting-security.html')
 
+# employee website
+@app.route('/admin-profile')
+def admin_profile():
+    return render_template('admin-profile.html')
+
+@app.route('/admin-security')
+def admin_security():
+    return render_template('admin-security.html')
+
+@app.route('/admin-loan')
+def admin_loan():
+    return render_template('admin-loan.html')
+
+@app.route('/admin-transfer')
+def admin_transfer():
+    return render_template('admin-transfer.html')
 
 #############
 

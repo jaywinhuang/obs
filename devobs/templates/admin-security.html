@@ -1,0 +1,158 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+    <!-- START PAGE CONTAINER -->
+    <div class="container container-boxed">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <!-- Accounts -->
+                <div class="block block-condensed">
+                    <div class="app-heading app-heading-small">
+                        <div class="title">
+                            <h2>Search Account</h2><br><br>
+                            <select class="bs-select" name="from" title="Choose your card" tabindex="-98">
+                                <option class="bs-title-option" value="">Choose Filter</option>
+                                <option value="1">By Account Number</option>
+                                <option value="2">By Social Security Number</option>
+                                <option value="3">By Username</option>
+                            </select>
+                            <br>
+                            <br>
+                            <input type="text" name="search" class="form-control"><br>
+                            <button class="btn btn-primary btn-clean pull-left">Search</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- END CARDS -->
+
+            </div>
+            <div class="col-md-6">
+                <!-- RECENT ACTIVITY -->
+                <div class="block block-condensed">
+                    <div class="app-heading app-heading-small margin-bottom-0">
+                        <div class="title">
+                            <h1>Recent Activity</h1>
+                            <p>Latest account usage</p>
+                        </div>
+                        <div class="heading-elements" style="width: 150px;">
+                            <h2>Freeze</h2>
+                            <div class="col-md-4 col-sm-4">
+                                <label class="switch">
+                                    <input type="checkbox" name="switch_1" checked value="0">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-divider-text">25 June 2017</div>
+                    <div class="block-content">
+                        <div class="listing margin-bottom-0">
+                            <div class="listing-item listing-item-with-icon">
+                                <span class="icon-car listing-item-icon"></span>
+                                <h4 class="text-rg text-bold">Refilling the car on gas station <span
+                                        class="text-muted pull-right">25/06/2017 20:11</span></h4>
+                                <div class="list-group list-group-inline">
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Account</span><br>
+                                        <span class="text-bold">Checking **9871</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Amount</span><br>
+                                        <span class="text-bold text-danger">-$13.50</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Balance</span><br>
+                                        <span class="text-bold">$1,544</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing-item listing-item-with-icon">
+                                <span class="icon-file-add listing-item-icon text-success"></span>
+                                <h4 class="text-rg text-bold">Income from Jenny Doe **5512 <span
+                                        class="text-muted pull-right">25/06/2017 10:11</span></h4>
+                                <div class="list-group list-group-inline margin-bottom-0">
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Account</span><br>
+                                        <span class="text-bold">Saving **0001</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Amount</span><br>
+                                        <span class="text-bold text-success">+$250.00</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Balance</span><br>
+                                        <span class="text-bold">$1,802</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-divider-text">23 June 2017</div>
+                    <div class="block-content">
+                        <div class="listing margin-bottom-0">
+                            <div class="listing-item listing-item-with-icon">
+                                <span class="icon-film-play listing-item-icon"></span>
+                                <h4 class="text-rg text-bold">Paid tickes in Theater <span
+                                        class="text-muted pull-right">23/06/2017 18:55</span></h4>
+                                <div class="list-group list-group-inline">
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Account</span><br>
+                                        <span class="text-bold">Saving **0001</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Amount</span><br>
+                                        <span class="text-bold text-danger">-$10.10</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Balance</span><br>
+                                        <span class="text-bold">$21,424</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing-item listing-item-with-icon">
+                                <span class="icon-store listing-item-icon"></span>
+                                <h4 class="text-rg text-bold">Shopping in NameMall. Shop: CarloMozolini <span
+                                        class="text-muted pull-right">23/06/2017 14:20</span></h4>
+                                <div class="list-group list-group-inline margin-bottom-0">
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Account</span><br>
+                                        <span class="text-bold">Checking **9871</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Amount</span><br>
+                                        <span class="text-bold text-danger">-$99.99</span>
+                                    </div>
+                                    <div class="list-group-item col-md-4 col-sm-4">
+                                        <span class="text-muted">Balance</span><br>
+                                        <span class="text-bold">$1,657</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 col-sm-12">
+                                <a href="pages-bank-activity.html" class="btn btn-primary btn-clean btn-block">All
+                                    Activity</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END RECENT -->
+
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}
