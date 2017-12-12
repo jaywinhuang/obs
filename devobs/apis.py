@@ -91,7 +91,7 @@ def login_after_check():
                 login_user(user)
             else:
                 result['status'] = 2
-                result["message"] = "Wrong security answer when login"
+                result["message"] = "Wrong security answer when login. For test, answer is: " + user.security_answer
                 # send email
                 email_receiver = [user.email]
                 email_body = "<p>Someone has tried to login your account with a wrong security answer at {}. If this is not you, please contact us at 1-080-987-6541, Monday through Friday 7 am to 10pm, Saturday and Sunday 8 am to 5 pm ET. This email was sent automatically as an additional layer of security. Thank you for using Devonshire Lending. This mailbox is not monitored. Please do not reply.</p>".format(

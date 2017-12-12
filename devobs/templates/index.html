@@ -465,7 +465,7 @@
                         <div class="form-group">
                             <div class="row" style="float:none;">
                                 <div class="col-md-12">
-                                    <label style="padding-right: 15px;" id="securityQuestion">Question: </label>
+                                    <label style="padding-right: 15px;" id="securityQuestion"></label>
                                 </div>
                             </div>
                         </div>
@@ -684,7 +684,7 @@
                 dataType: "json",
                 success: function (res) {
                     if (res.status == 0) {
-                        $("#securityQuestion").append(res.data["securityQuestion"]);
+                        $("#securityQuestion").html("Question:  " + res.data["securityQuestion"]);
                         $("#modal-login").modal();
                     } else {
                         $("#alert-login").html(res.message);
