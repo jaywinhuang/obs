@@ -2,7 +2,7 @@ flask-env/
 *.pyc
 *.pid
 .DS_Store
-.idea/inspectionProfiles/
+.idea/
 logs/
 /devobs/templates/.idea/
 /migrateDB.sh

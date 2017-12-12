@@ -32,15 +32,13 @@ def login_auth():
 
     try:
         username = request.form.get('username')
-        password = request.form.get('password')
-        if (username is None) or (password is None):
-            raise Exception
-        user = Users.query.filter_by(username=username, password=password).first()
+        user = Users.query.filter_by(username=username).first()
         if user is not None:
-            login_user(user)
+            result['data']['securityQuestion'] = user.security_question
         else:
-            result['status'] = 2
-            result['message'] = "user name or password incorrect. For test, username:obs, password: obs"
+            result['status'] = 3
+            result['message'] = "user is not exits"
+
     except Exception, e:
         result['status'] = 1
         result['message'] = "Login error"
@@ -49,8 +47,8 @@ def login_auth():
     return jsonify(result)
 
 
-# @apis.route('/user/login_after_check', methods=['POST'])
-# def login_after_check():
+# @apis.route('/user/login', methods=['POST'])
+# def login_auth():
 #     result = {
 #         "status": 0,
 #         "message": "success",
@@ -60,15 +58,64 @@ def login_auth():
 #     try:
 #         username = request.form.get('username')
 #         password = request.form.get('password')
+#         if (username is None) or (password is None):
+#             raise Exception
 #         user = Users.query.filter_by(username=username, password=password).first()
-#         login_user(user)
-#
+#         if user is not None:
+#             login_user(user)
+#         else:
+#             result['status'] = 2
+#             result['message'] = "user name or password incorrect. For test, username:obs, password: obs"
 #     except Exception, e:
 #         result['status'] = 1
 #         result['message'] = "Login error"
 #         app.logger.error(traceback.format_exc())
 #
 #     return jsonify(result)
+
+@apis.route('/user/login_after_check', methods=['POST'])
+def login_after_check():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": {}
+    }
+
+    try:
+        username = request.form.get('username')
+        password = request.form.get('password')
+        security_answer = request.form.get("securityAnswer")
+        user = Users.query.filter_by(username=username).first()
+        if user.password == password:
+            if user.security_answer == security_answer:
+                login_user(user)
+            else:
+                result['status'] = 2
+                result["message"] = "Wrong security answer when login"
+                # send email
+                email_receiver = [user.email]
+                email_body = "<p>Someone has tried to login your account with a wrong security answer at {}. If this is not you, please contact us at 1-080-987-6541, Monday through Friday 7 am to 10pm, Saturday and Sunday 8 am to 5 pm ET. This email was sent automatically as an additional layer of security. Thank you for using Devonshire Lending. This mailbox is not monitored. Please do not reply.</p>".format(
+                    time.ctime())
+                app.logger.info("Send email to {}".format(user.email))
+                utils.send_email(email_receiver, "Wrong security answer when login", email_body)
+                return jsonify(result)
+        else:
+            result['status'] = 3
+            result["message"] = "Wrong password when login"
+            email_receiver = [user.email]
+            email_body = "<p>Someone has tried to login your account with a wrong password at {}. If this is not you, please contact us at 1-080-987-6541, Monday through Friday 7 am to 10pm, Saturday and Sunday 8 am to 5 pm ET. This email was sent automatically as an additional layer of security. Thank you for using Devonshire Lending. This mailbox is not monitored. Please do not reply.</p>".format(
+                time.ctime())
+            app.logger.info("Send email to {}".format(user.email))
+            utils.send_email(email_receiver, "Wrong password when login", email_body)
+            return jsonify(result)
+
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Login error"
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
 
 
 @apis.route('/user/accounts', methods=['GET'])

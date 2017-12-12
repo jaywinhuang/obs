@@ -98,11 +98,11 @@
     <div class="container">
         <div class="banner-inner">
             <div class="col-md-5 banner-left">
-                <form id="form_login" action="" method="POST" role="form">
+                <form id="form-login" action="" method="POST" role="form">
                     <h3>Secure Account Login</h3>
                     <input type="text" id="username" placeholder="username" required=""/>
                     <input type="password" id="password" placeholder="password" required=""/>
-                    <div id="alert_login" class="alert alert-danger alert-icon-block alert-dismissible" role="alert"
+                    <div id="alert-login" class="alert alert-danger alert-icon-block alert-dismissible" role="alert"
                          style="display: none">
                     </div>
                     <div class="form-group row" style="float:left;display:inline">
@@ -456,41 +456,45 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="span1"
                                                                                                   aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title"> Security<span> Question</span></h4>
+                <h4 class="modal-title"><span> Security Question</span></h4>
             </div>
             <div class="modal-body">
                 <div class="agileits-w3layouts-info">
 
-
-                    <div class="form-group">
-                        <div class="row" style="float:none;">
-                            <div class="col-md-12">
-                                <label style="padding-right: 15px;">Security Question </label>
-                                <select name="question" disabled>
-                                    <option value="1">Name of your first pet?</option>
-
-                                </select>
+                    <form action="" id="form-login-secure">
+                        <div class="form-group">
+                            <div class="row" style="float:none;">
+                                <div class="col-md-12">
+                                    <label style="padding-right: 15px;" id="securityQuestion">Question: </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label style="padding-right: 100px;">Answer </label>
-                                <input class="security-question" type="text" name="answer">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label style="padding-right: 100px;">Answer: </label>
+                                    <input class="security-question" type="text" name="answer" id="securityAnswer">
 
-                                <span class="help-block">Please answer security question to help us verify your identity</span>
+                                    <span class="help-block">Please answer security question to help us verify your identity</span>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-offset-3 col-md-6">
-                                <a style="float: left; font-size:1.3em;" href="#" class="btn btn-warning btn-block"
-                                   type="submit">Login</a>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-offset-3 col-md-6">
+                                    <button style="float: left; font-size:1.3em;" href="#"
+                                            class="btn btn-warning btn-block"
+                                            type="submit">Login
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div id="alert-login-secure" class="alert alert-danger alert-icon-block alert-dismissible"
+                             role="alert"
+                             style="display: none">
+                        </div>
+                    </form>
 
 
                 </div>
@@ -664,10 +668,10 @@
 </script>
 <!-- //here ends scrolling icon -->
 <script src="../static/js/bars.js"></script>
-
+<script src="../static/js/main.js" type="application/javascript"></script>
 <script>
     $(function () {
-        $("#form_login").submit(function (event) {
+        $("#form-login").submit(function (event) {
             event.preventDefault();
 
             var username = $("#username").val();
@@ -676,21 +680,76 @@
             $.ajax({
                 url: "/api/user/login",
                 type: "POST",
-                data: "username="+username+"&password="+password,
+                data: "username=" + username + "&password=" + password,
                 dataType: "json",
                 success: function (res) {
                     if (res.status == 0) {
-                                                window.location.href = "/account-summary";
+                        $("#securityQuestion").append(res.data["securityQuestion"]);
+                        $("#modal-login").modal();
                     } else {
-                        $(alert_login).html(res.message);
-                        $(alert_login).show();
+                        $("#alert-login").html(res.message);
+                        $("#alert-login").show();
                     }
                 }
             })
         })
-    })
+
+        $("#form-login-secure").submit(function (event) {
+            event.preventDefault();
+
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var securityAnswer = $("#securityAnswer").val();
+
+            $.ajax({
+                url: "/api/user/login_after_check",
+                type: "POST",
+                data: {
+                    "username": username,
+                    "password": password,
+                    "securityAnswer": securityAnswer
+                },
+                dataType: "json",
+                success: function (res) {
+                    if (res.status == 0) {
+                        window.location.href = "/account-summary";
+                    } else {
+                        $("#alert-login-secure").html(res.message);
+                        $("#alert-login-secure").show();
+                    }
+                }
+            })
+        })
+    });
 
 </script>
+
+{#<script>#}
+{#    $(function () {#}
+{#        $("#form_login").submit(function (event) {#}
+{#            event.preventDefault();#}
+{##}
+{#            var username = $("#username").val();#}
+{#            var password = $("#password").val();#}
+{##}
+{#            $.ajax({#}
+{#                url: "/api/user/login",#}
+{#                type: "POST",#}
+{#                data: "username=" + username + "&password=" + password,#}
+{#                dataType: "json",#}
+{#                success: function (res) {#}
+{#                    if (res.status == 0) {#}
+{#                        window.location.href = "/account-summary";#}
+{#                    } else {#}
+{#                        $(alert_login).html(res.message);#}
+{#                        $(alert_login).show();#}
+{#                    }#}
+{#                }#}
+{#            })#}
+{#        })#}
+{#    })#}
+{##}
+{#</script>#}
 </body>
 <!-- //Body -->
 </html>

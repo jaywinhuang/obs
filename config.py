@@ -9,9 +9,9 @@ SQLALCHEMY_DATABASE_URI = "mysql://obs_dev:obs_dev_admin@jaydbinstance.cshar3yuj
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 # email config
-MAIL_USERNAME = ''
-MAIL_PASSWORD = ''
-MAIL_DEFAULT_SENDER = ''
+MAIL_USERNAME = '914168409@qq.com'
+MAIL_PASSWORD = 'veabmyitilsmbcjc'
+MAIL_DEFAULT_SENDER = '914168409@qq.com'
 MAIL_SERVER = 'smtp.qq.com'
 MAIL_PORT = 465
 MAIL_USE_SSL = True
