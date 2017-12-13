@@ -2,7 +2,7 @@ import os
 import time
 import traceback
 
-from flask import request, jsonify, g, Blueprint
+from flask import request, jsonify, g, Blueprint, session
 from flask_login import login_user, login_required
 from sqlalchemy import desc
 
@@ -15,7 +15,7 @@ apis = Blueprint("apis", __name__)
 
 @apis.route('/')
 def apis_index():
-    return "I am api's index."
+    return "I am api's index. if you see this message, APIs are working fine."
 
 
 #############################
@@ -45,33 +45,6 @@ def login_auth():
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
-
-
-# @apis.route('/user/login', methods=['POST'])
-# def login_auth():
-#     result = {
-#         "status": 0,
-#         "message": "success",
-#         "data": {}
-#     }
-#
-#     try:
-#         username = request.form.get('username')
-#         password = request.form.get('password')
-#         if (username is None) or (password is None):
-#             raise Exception
-#         user = Users.query.filter_by(username=username, password=password).first()
-#         if user is not None:
-#             login_user(user)
-#         else:
-#             result['status'] = 2
-#             result['message'] = "user name or password incorrect. For test, username:obs, password: obs"
-#     except Exception, e:
-#         result['status'] = 1
-#         result['message'] = "Login error"
-#         app.logger.error(traceback.format_exc())
-#
-#     return jsonify(result)
 
 @apis.route('/user/login_after_check', methods=['POST'])
 def login_after_check():
@@ -141,7 +114,7 @@ def get_accounts():
 
 @apis.route('/user/account-activities', methods=['POST'])
 @login_required
-def get_activities():
+def get_transactions():
     result = {
         "status": 0,
         "message": "success",
@@ -182,41 +155,6 @@ def get_activities():
 
     return jsonify(result)
 
-
-@apis.route('/user/transactions', methods=['POST'])
-@login_required
-def get_transactions():
-    result = {
-        "status": 0,
-        "message": "success",
-        "data": []
-    }
-
-    try:
-        account_num1 = request.form.get('accountNumber')
-
-        if not utils.is_owner(account_num1):
-            result['status'] = 3
-            result['message'] = "You are not the owner of this account."
-            return jsonify(result)
-
-        transactions = db.session.query(Transaction).filter(Transaction.account_num == account_num1)
-        for trans in transactions:
-            tmp = {
-                "dateTime": trans.time,
-                "type": trans.type,
-                "desc": trans.remark,
-                "amount": trans.amount,
-                "balanceSnapshot": trans.balance_snapshot
-            }
-            result['data'].append(tmp)
-
-    except Exception, e:
-        result['status'] = 1
-        result['message'] = "Get transaction error"
-        app.logger.error(traceback.format_exc())
-
-    return jsonify(result)
 
 
 @apis.route('/user/transfer', methods=['POST'])
@@ -549,6 +487,116 @@ def update_enroll_info():
     except Exception, e:
         result['status'] = 1
         result['message'] = ""
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
+@apis.route('/user/transfer_after_check', methods=['POST'])
+def transfer_funds_after_check():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": {}
+    }
+    try:
+        verification_code = request.form.get("verificationCode")
+        fromacnt = request.form.get('fromAccount')
+        toacnt = request.form.get('toAccount')
+        amt = float(request.form.get('amount'))
+        curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
+        if session[g.user.get_id()] == verification_code:
+            from_account = g.user.accounts.filter(Account.account_num == fromacnt).first()
+            to_account = g.user.accounts.filter(Account.account_num == toacnt).first()
+            from_account.balance -= amt
+            to_account.balance += amt
+
+            # insert transfer record
+            transf = Transfer(from_account=fromacnt, to_account=toacnt, amount=amt, time=curr_time)
+            db.session.add(transf)
+            db.session.commit()
+            transf_id = transf.transfer_id
+
+            # insert transaction history record
+            transaction_from = Transaction(account_num=fromacnt, amount=-amt, type='transfer',
+                                           time=curr_time,
+                                           remark='transfer to ' + toacnt, operation_id=transf_id,
+                                           balance_snapshot=from_account.balance)
+            transaction_to = Transaction(account_num=toacnt, amount=amt, type='transfer',
+                                         time=curr_time,
+                                         remark='transfer from ' + fromacnt, operation_id=transf_id,
+                                         balance_snapshot=to_account.balance)
+            db.session.add(transaction_from)
+            db.session.add(transaction_to)
+            db.session.commit()
+
+        else:
+            result['status'] = 2
+            result["message"] = "The verification code is not right"
+            return jsonify(result)
+
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Transfer error"
+        app.logger.error(traceback.format_exc())
+
+    return jsonify(result)
+
+@apis.route("/user/paybill_after_check", methods=['POST'])
+def pay_bill_action():
+    result = {
+        "status": 0,
+        "message": "success",
+        "data": {}
+    }
+    try:
+        verification_code = request.form.get("verificationCode")
+        if session[g.user.get_id()] == verification_code:
+            from_account = request.form.get("fromAccount")
+            amount = int(request.form.get("amount"))
+            biller_name = request.form.get("billerName")
+            biller_account = request.form.get("billerAccount")
+            biller_address = request.form.get("billerAddress")
+            biller_address2 = request.form.get("billerAddress2")
+            biller_city = request.form.get("billerCity")
+            biller_state = request.form.get("billerState")
+            biller_zip = request.form.get("billerZip")
+            biller_phone = request.form.get("billerPhone")
+            curr_time = time.strftime('%Y-%m-%d %H:%M:%S')
+            account_model = Account.query.filter_by(account_num=from_account).first()
+            account_model.balance -= amount
+
+            # if biller account in the same bank, add it.
+            account_model_biller = Account.query.filter_by(account_num=biller_account).first()
+            if account_model_biller:
+                account_model_biller.balance += amount
+
+            # save bill record
+            bill_model = Bill(from_account=from_account, amount=amount, time=curr_time,
+                              biller_name=biller_name, biller_account=biller_account,
+                              biller_address="{} {}".format(biller_address, biller_address2),
+                              biller_state=biller_state, biller_city=biller_city,
+                              biller_zip=biller_zip, biller_phone=biller_phone)
+            db.session.add(bill_model)
+            db.session.flush()
+
+            # save transaction record
+            transaction_model = Transaction(account_num=from_account, amount=-amount, type="bill",
+                                            time=curr_time,
+                                            remark="pay bill to: {} {}".format(biller_name,
+                                                                               biller_account),
+                                            operation_id=bill_model.bill_id,
+                                            balance_snapshot=account_model.balance)
+
+            db.session.add(transaction_model)
+            db.session.commit()
+        else:
+            result['status'] = 2
+            result["message"] = "The verification code is not right"
+            return jsonify(result)
+
+    except Exception, e:
+        result['status'] = 1
+        result['message'] = "Pay bill failed, check your server."
         app.logger.error(traceback.format_exc())
 
     return jsonify(result)
